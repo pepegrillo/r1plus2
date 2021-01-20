@@ -14,5 +14,6 @@ class EmpleadoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var lblFecha: UILabel!
     @IBOutlet weak var lblHora: UILabel!
+    @IBOutlet weak var btnDelete: UIButton!
     
 }

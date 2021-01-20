@@ -102,11 +102,61 @@ class UsuariosViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func actionProveedorDelete(_ sender : UIButton){
+        print(sender.tag)
+        let data = proveedorViewModel.listArray[sender.tag]
+        
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Eliminar", message: "¿Desea eliminar el pase de - \(data.name?.capitalized ?? "proveedor") ?", preferredStyle: .alert)
+
+        // Create the actions
+        let okAction = UIAlertAction(title: "Eliminar", style: UIAlertAction.Style.destructive) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+            self.typeDelete = 2
+            self.deleteViewModel.requestDelete(idIdElement: data.id ?? 0, idUrl: "empleado")
+        }
+        let cancelAction = UIAlertAction(title:"Cancelar", style: .cancel) { (action: UIAlertAction) in }
+
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     // MARK: - Empleador Parameters
     @IBAction func actionEmpleadoAll(_ sender: UIButton) {
         
         let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "EmpleadoAllViewController") as! EmpleadoAllViewController
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func actionEmpleadoDelete(_ sender : UIButton){
+        print(sender.tag)
+        let data = empleadoViewModel.listArray[sender.tag]
+        
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Eliminar", message: "¿Desea eliminar el pase de - \(data.name?.capitalized ?? "empleado") ?", preferredStyle: .alert)
+
+        // Create the actions
+        let okAction = UIAlertAction(title: "Eliminar", style: UIAlertAction.Style.destructive) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+            self.typeDelete = 3
+            self.deleteViewModel.requestDelete(idIdElement: data.id ?? 0, idUrl: "empleado")
+        }
+        let cancelAction = UIAlertAction(title:"Cancelar", style: .cancel) { (action: UIAlertAction) in }
+
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
 }
@@ -312,6 +362,9 @@ extension UsuariosViewController: UICollectionViewDataSource {
             cell.lblNombre?.text = data.name?.capitalized
             cell.lblFecha?.text = data.lastName?.capitalized
             cell.lblHora?.text = data.telefonos?[0].phone
+            
+            // actions CRUD
+            cell.btnDelete.tag = indexPath.row
             
             return cell
         }

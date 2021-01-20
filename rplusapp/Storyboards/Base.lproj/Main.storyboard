@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnW-EK-uGd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnW-EK-uGd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1984,22 +1984,25 @@ invitado</string>
                                                                         <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGX-5T-QHc">
                                                                             <rect key="frame" x="249" y="0.0" width="57" height="175"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tre-Tp-ySP">
-                                                                                    <rect key="frame" x="8" y="43" width="40" height="40"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                </button>
                                                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconEdit" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-Is-z4O">
                                                                                     <rect key="frame" x="18" y="54" width="20" height="20"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reb-vh-8zx">
-                                                                                    <rect key="frame" x="8" y="92" width="40" height="40"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tre-Tp-ySP">
+                                                                                    <rect key="frame" x="8" y="42.5" width="40" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </button>
-                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconDelete" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-Q9-h2F">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconDelete" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-Q9-h2F">
                                                                                     <rect key="frame" x="18" y="102" width="20" height="20"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </imageView>
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reb-vh-8zx">
+                                                                                    <rect key="frame" x="8" y="91.5" width="40" height="40"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <connections>
+                                                                                        <action selector="actionProveedorDelete:" destination="QZe-i6-wVX" eventType="touchUpInside" id="DIi-58-h9n"/>
+                                                                                    </connections>
+                                                                                </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
@@ -2033,6 +2036,7 @@ invitado</string>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="306" height="175"/>
                                                         <connections>
+                                                            <outlet property="btnDelete" destination="Reb-vh-8zx" id="8hG-ah-yU2"/>
                                                             <outlet property="container" destination="JHh-ys-BTf" id="c4t-hy-Zvl"/>
                                                             <outlet property="imageAvatar" destination="oBu-1v-nCa" id="4UY-g3-BEY"/>
                                                             <outlet property="lblEmpresa" destination="EHr-sZ-BTI" id="zNv-Hg-t7M"/>
@@ -2170,6 +2174,13 @@ invitado</string>
                                                                         <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnL-mu-AfG">
                                                                             <rect key="frame" x="249" y="0.0" width="57" height="175"/>
                                                                             <subviews>
+                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconEdit" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-vz-lI5">
+                                                                                    <rect key="frame" x="18" y="53" width="20" height="20"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="20" id="Vgv-DP-4hN"/>
+                                                                                        <constraint firstAttribute="height" constant="20" id="itI-z3-b55"/>
+                                                                                    </constraints>
+                                                                                </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-79-dJK">
                                                                                     <rect key="frame" x="8" y="43" width="40" height="40"/>
                                                                                     <constraints>
@@ -2177,11 +2188,11 @@ invitado</string>
                                                                                         <constraint firstAttribute="width" constant="40" id="YgC-ND-cHg"/>
                                                                                     </constraints>
                                                                                 </button>
-                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconEdit" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-vz-lI5">
-                                                                                    <rect key="frame" x="18" y="53" width="20" height="20"/>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDelete" translatesAutoresizingMaskIntoConstraints="NO" id="iuN-K5-rzu">
+                                                                                    <rect key="frame" x="18" y="102" width="20" height="20"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="20" id="Vgv-DP-4hN"/>
-                                                                                        <constraint firstAttribute="height" constant="20" id="itI-z3-b55"/>
+                                                                                        <constraint firstAttribute="height" constant="20" id="1EA-8y-FlY"/>
+                                                                                        <constraint firstAttribute="width" constant="20" id="ROL-Pb-6k9"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KK3-EP-TW6">
@@ -2190,14 +2201,10 @@ invitado</string>
                                                                                         <constraint firstAttribute="width" constant="40" id="PeU-6u-uzh"/>
                                                                                         <constraint firstAttribute="height" constant="40" id="uDj-G0-542"/>
                                                                                     </constraints>
+                                                                                    <connections>
+                                                                                        <action selector="actionEmpleadoDelete:" destination="QZe-i6-wVX" eventType="touchUpInside" id="iTW-O6-i4V"/>
+                                                                                    </connections>
                                                                                 </button>
-                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDelete" translatesAutoresizingMaskIntoConstraints="NO" id="iuN-K5-rzu">
-                                                                                    <rect key="frame" x="18" y="102" width="20" height="20"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="20" id="1EA-8y-FlY"/>
-                                                                                        <constraint firstAttribute="width" constant="20" id="ROL-Pb-6k9"/>
-                                                                                    </constraints>
-                                                                                </imageView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
@@ -2246,6 +2253,7 @@ invitado</string>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="306" height="175"/>
                                                         <connections>
+                                                            <outlet property="btnDelete" destination="KK3-EP-TW6" id="yy5-cJ-POy"/>
                                                             <outlet property="container" destination="7cB-Qw-NxU" id="2NI-qz-DrA"/>
                                                             <outlet property="imageAvatar" destination="PKW-Kw-hRy" id="wnu-z4-4Sj"/>
                                                             <outlet property="lblFecha" destination="Y8b-UI-ZgP" id="8fN-kW-fEX"/>

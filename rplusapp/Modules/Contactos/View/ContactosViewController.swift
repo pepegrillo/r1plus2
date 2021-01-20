@@ -79,8 +79,12 @@ extension ContactosViewController {
         if (contactosFromDB.count == 0) {
             AppData.sharedData.saveContactosObject(arrContactos: contactosVerificados)
             print("--->GUARDAR<-----")
+            
         }
         
+        DispatchQueue.main.async {
+            self.tvContactos.reloadData()
+        }
         
     }
     
@@ -101,9 +105,9 @@ extension ContactosViewController {
                     try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
                         
                         self.contacts.append(FetchedContact(firstName: contact.givenName, lastName: contact.familyName, telephone: contact.phoneNumbers.first?.value.stringValue ?? "", avatar: contact.thumbnailImageData))
-                        DispatchQueue.main.async {
-                            self.tvContactos.reloadData()
-                        }
+//                        DispatchQueue.main.async {
+//                            self.tvContactos.reloadData()
+//                        }
                         print("BAM ---->")
                         
                     })
@@ -124,7 +128,7 @@ extension ContactosViewController: UITableViewDataSource {
         
         let cell = tvContactos.dequeueReusableCell(withIdentifier: "ContactosCell", for: indexPath as IndexPath) as! ContactosTableViewCell
         
-        if contactosFromDB.count > 0 {
+        //if contactosFromDB.count > 0 {
             
             let avatarDataDb = Data(contactosFromDB[indexPath.row].avatar.utf8)
             
@@ -144,7 +148,7 @@ extension ContactosViewController: UITableViewDataSource {
             
             return cell
             
-        } else {
+        /*} else {
             
             
             if contacts[indexPath.row].avatar != nil {
@@ -163,18 +167,18 @@ extension ContactosViewController: UITableViewDataSource {
             
             return cell
             
-        }
+        }*/
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if contactosFromDB.count > 0 {
+        //if contactosFromDB.count > 0 {
             return contactosFromDB.count
-        } else {
-            return contacts.count
-        }
-            
+//        } else {
+//            return contacts.count
+//        }
+//
        
         
         

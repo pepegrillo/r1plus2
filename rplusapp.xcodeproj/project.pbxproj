@@ -1312,17 +1312,17 @@
 		00FDB60A2559D80E0012E265 /* rplusapp */ = {
 			isa = PBXGroup;
 			children = (
-				00002CDF2582BE2E00BAA260 /* rplusapp.entitlements */,
 				00FDB6222559DACA0012E265 /* App */,
 				00FDB6232559DAD40012E265 /* Extensions */,
 				00FDB6202559D9A40012E265 /* Extras */,
+				00FDB6192559D8100012E265 /* Info.plist */,
 				00FDB6212559D9B10012E265 /* Managers */,
 				00FDB62D2559DB220012E265 /* Modules */,
 				00FDB62E2559DB2F0012E265 /* Resources */,
+				00002CDF2582BE2E00BAA260 /* rplusapp.entitlements */,
 				00FDB62F2559DB3C0012E265 /* Storyboards */,
-				00FDB6302559DB480012E265 /* WebServices */,
 				00FDB60F2559D80E0012E265 /* ViewController.swift */,
-				00FDB6192559D8100012E265 /* Info.plist */,
+				00FDB6302559DB480012E265 /* WebServices */,
 			);
 			path = rplusapp;
 			sourceTree = "<group>";
@@ -1384,26 +1384,26 @@
 		00FDB62D2559DB220012E265 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0021FE0725807B7800E86856 /* Contactos */,
-				0021FDEE257FE5E500E86856 /* Permisos */,
-				00E61C77257EEE0A000F6BD2 /* ShowCase */,
-				003BF5A2257ED94E00DC7B2C /* GeneralWebview */,
+				00AB8FF5256714DF001C97E5 /* AgregarCasa */,
+				00AB8FFB256715E3001C97E5 /* AgregarResidencial */,
 				003BF594257ED61300DC7B2C /* Amenidades */,
 				003EBA34256C567F009082BC /* Authentication */,
 				00AB900125671666001C97E5 /* BeneficioRestriccionResidencia */,
-				00AB8FFF25671654001C97E5 /* Mascotas */,
+				0021FE0725807B7800E86856 /* Contactos */,
+				00FDB686255B3E970012E265 /* Directorio */,
+				00AB8E682564C788001C97E5 /* GeneralModel */,
+				003BF5A2257ED94E00DC7B2C /* GeneralWebview */,
 				00AB8FFE2567163B001C97E5 /* HistorialPagos */,
 				00AB8FFD25671625001C97E5 /* HistorialPasesVisitas */,
-				00AB8FFB256715E3001C97E5 /* AgregarResidencial */,
-				00AB8FF5256714DF001C97E5 /* AgregarCasa */,
-				00AB8E682564C788001C97E5 /* GeneralModel */,
-				00FDB687255B3EAE0012E265 /* Opciones */,
-				00FDB686255B3E970012E265 /* Directorio */,
-				00FDB685255B3E6C0012E265 /* Reportes */,
-				00FDB684255B3E530012E265 /* Usuarios */,
 				00FDB683255B3E4C0012E265 /* Home */,
-				00AB8FF025670E6B001C97E5 /* MiPerfil */,
+				00AB8FFF25671654001C97E5 /* Mascotas */,
 				00FDB67E255B369F0012E265 /* MenuTabNavigation */,
+				00AB8FF025670E6B001C97E5 /* MiPerfil */,
+				00FDB687255B3EAE0012E265 /* Opciones */,
+				0021FDEE257FE5E500E86856 /* Permisos */,
+				00FDB685255B3E6C0012E265 /* Reportes */,
+				00E61C77257EEE0A000F6BD2 /* ShowCase */,
+				00FDB684255B3E530012E265 /* Usuarios */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

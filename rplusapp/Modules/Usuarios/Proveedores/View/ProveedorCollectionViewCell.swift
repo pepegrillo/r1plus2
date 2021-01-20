@@ -13,4 +13,5 @@ class ProveedorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var lblEmpresa: UILabel!
+    @IBOutlet weak var btnDelete: UIButton!
 }
