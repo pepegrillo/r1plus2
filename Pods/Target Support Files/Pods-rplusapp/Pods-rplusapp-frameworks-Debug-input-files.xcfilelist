@@ -1,0 +1,13 @@
+${PODS_ROOT}/Target Support Files/Pods-rplusapp/Pods-rplusapp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${BUILT_PRODUCTS_DIR}/Hue/Hue.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/JMMaskTextField-Swift/JMMaskTextField_Swift.framework
+${BUILT_PRODUCTS_DIR}/Mantis/Mantis.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageSVGCoder/SDWebImageSVGCoder.framework
+${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework
