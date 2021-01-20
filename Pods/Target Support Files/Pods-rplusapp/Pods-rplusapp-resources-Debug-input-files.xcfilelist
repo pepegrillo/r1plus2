@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-rplusapp/Pods-rplusapp-resources.sh
+${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle
+${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Mantis/Resource.bundle

@@ -1,0 +1,6 @@
+module Pods_rplusapp {
+  umbrella header "Pods-rplusapp-umbrella.h"
+
+  export *
+  module * { export * }
+}
