@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
@@ -43,6 +44,9 @@ class HomeViewController: UIViewController {
         // init loading
         initialMethod()
         
+        // delete Realm contacts for testing
+        AppData.sharedData.removeContactosObject()
+        
     }
     
     override func viewDidLoad() {
@@ -51,6 +55,7 @@ class HomeViewController: UIViewController {
         //set design
         setDesign()
         
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "REALMS")
     }
     
     

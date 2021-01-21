@@ -58,6 +58,7 @@ extension ContactosViewController {
     
     private func initialMethod() {
         
+        
         // Tableview Set DataSource and DataDelegate
         tvContactos.dataSource = self
         tvContactos.delegate = self
@@ -105,9 +106,9 @@ extension ContactosViewController {
                     try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
                         
                         self.contacts.append(FetchedContact(firstName: contact.givenName, lastName: contact.familyName, telephone: contact.phoneNumbers.first?.value.stringValue ?? "", avatar: contact.thumbnailImageData))
-//                        DispatchQueue.main.async {
-//                            self.tvContactos.reloadData()
-//                        }
+                        //                        DispatchQueue.main.async {
+                        //                            self.tvContactos.reloadData()
+                        //                        }
                         print("BAM ---->")
                         
                     })
@@ -128,60 +129,60 @@ extension ContactosViewController: UITableViewDataSource {
         
         let cell = tvContactos.dequeueReusableCell(withIdentifier: "ContactosCell", for: indexPath as IndexPath) as! ContactosTableViewCell
         
-        //if contactosFromDB.count > 0 {
+        if contactosFromDB.count > 0 {
             
-            let avatarDataDb = Data(contactosFromDB[indexPath.row].avatar.utf8)
+            let dataDB = contactosFromDB[indexPath.row]
             
-            if contactosFromDB[indexPath.row].avatar != "" {
+            if dataDB.avatar != "" {
                 
-                let decodedimage = UIImage(data: avatarDataDb)
+                let dataDecoded: Data = Data(base64Encoded: dataDB.avatar, options: .ignoreUnknownCharacters)!
+                
+                let decodedimage: UIImage = UIImage(data: dataDecoded)!
                 cell.imgAvatar.image = decodedimage
                 cell.imgAvatar.makeRounded()
             } else {
                 cell.imgAvatar.image = UIImage(named: "IconCircle")
             }
             
-            cell.lblName.text = contactosFromDB[indexPath.row].name
-            cell.lblPhone.text = contactosFromDB[indexPath.row].phone
+            cell.lblName.text = dataDB.name
+            cell.lblPhone.text = dataDB.phone
             
             cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
             
             return cell
             
-        /*} else {
+        } else {
             
+            let dataDBFirstTime = contactosVerificados[indexPath.row]
             
-            if contacts[indexPath.row].avatar != nil {
+            if dataDBFirstTime.avatar != nil {
                 
-                let decodedimage = UIImage(data: contacts[indexPath.row].avatar!)
+                let decodedimage = UIImage(data: dataDBFirstTime.avatar!)
                 cell.imgAvatar.image = decodedimage
                 cell.imgAvatar.makeRounded()
             } else {
                 cell.imgAvatar.image = UIImage(named: "IconCircle")
             }
             
-            cell.lblName.text = contacts[indexPath.row].firstName
-            cell.lblPhone.text = contacts[indexPath.row].telephone
+            cell.lblName.text = dataDBFirstTime.name
+            cell.lblPhone.text = dataDBFirstTime.phone
             
             cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
             
             return cell
             
-        }*/
+        }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //if contactosFromDB.count > 0 {
+        if contactosFromDB.count > 0 {
             return contactosFromDB.count
-//        } else {
-//            return contacts.count
-//        }
-//
-       
-        
-        
+        } else {
+            return contactosVerificados.count
+        }
+
     }
 }
 

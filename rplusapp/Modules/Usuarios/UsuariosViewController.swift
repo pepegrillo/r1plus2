@@ -55,6 +55,8 @@ class UsuariosViewController: UIViewController {
         //set design
         setDesign()
         
+        // testing Realm
+        //AppData.sharedData.updateContactosObject()
     }
     
     // MARK: - Visitas Frecuentes Parameters
