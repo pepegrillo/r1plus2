@@ -11,6 +11,8 @@
 		000082DE258D0EDD00B35D07 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000082DD258D0EDD00B35D07 /* PasswordRecoveryViewController.swift */; };
 		000082E2258D0F8600B35D07 /* PasswordRecoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000082E1258D0F8600B35D07 /* PasswordRecoveryViewModel.swift */; };
 		000082E5258D0FFB00B35D07 /* PasswordRecoveryWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000082E4258D0FFB00B35D07 /* PasswordRecoveryWS.swift */; };
+		0001001325C35C490068C8E8 /* AnuncioDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001001225C35C490068C8E8 /* AnuncioDetalleViewController.swift */; };
+		000BD1F125CDA29C0064720B /* GeneratorQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BD1F025CDA29C0064720B /* GeneratorQR.swift */; };
 		001F17632568C2CC00C28CD5 /* VisitaFrecuenteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F17622568C2CC00C28CD5 /* VisitaFrecuenteListViewController.swift */; };
 		001F17662568C43300C28CD5 /* VisitaFrecuenteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F17652568C43300C28CD5 /* VisitaFrecuenteTableViewCell.swift */; };
 		001F17692568D83D00C28CD5 /* MisReportesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F17682568D83C00C28CD5 /* MisReportesViewController.swift */; };
@@ -85,6 +87,9 @@
 		00601208257ACD9300AE2956 /* PasesAsignadosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00601207257ACD9300AE2956 /* PasesAsignadosCollectionViewCell.swift */; };
 		00869E4D257946FB000A8DE1 /* RegistroReporteWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00869E4C257946FB000A8DE1 /* RegistroReporteWS.swift */; };
 		00869E5025794895000A8DE1 /* RegistroReporteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00869E4F25794895000A8DE1 /* RegistroReporteViewModel.swift */; };
+		009A576825BFD32E0077D03D /* ContactosVerificados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A576725BFD32E0077D03D /* ContactosVerificados.swift */; };
+		009A576C25BFD4200077D03D /* ContactoVerificadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A576B25BFD4200077D03D /* ContactoVerificadoViewModel.swift */; };
+		009A576F25BFD5E70077D03D /* ContactosVerificadosWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A576E25BFD5E70077D03D /* ContactosVerificadosWS.swift */; };
 		00A857B22575DD910020F61C /* HistorialPago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A857B12575DD910020F61C /* HistorialPago.swift */; };
 		00A857B52575DEFC0020F61C /* HistorialPagoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A857B42575DEFC0020F61C /* HistorialPagoViewModel.swift */; };
 		00A857B82575DFC40020F61C /* HistorialPagoWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A857B72575DFC40020F61C /* HistorialPagoWS.swift */; };
@@ -207,6 +212,8 @@
 		000082DD258D0EDD00B35D07 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		000082E1258D0F8600B35D07 /* PasswordRecoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewModel.swift; sourceTree = "<group>"; };
 		000082E4258D0FFB00B35D07 /* PasswordRecoveryWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryWS.swift; sourceTree = "<group>"; };
+		0001001225C35C490068C8E8 /* AnuncioDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioDetalleViewController.swift; sourceTree = "<group>"; };
+		000BD1F025CDA29C0064720B /* GeneratorQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorQR.swift; sourceTree = "<group>"; };
 		001F17622568C2CC00C28CD5 /* VisitaFrecuenteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaFrecuenteListViewController.swift; sourceTree = "<group>"; };
 		001F17652568C43300C28CD5 /* VisitaFrecuenteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaFrecuenteTableViewCell.swift; sourceTree = "<group>"; };
 		001F17682568D83C00C28CD5 /* MisReportesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisReportesViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +288,9 @@
 		00601207257ACD9300AE2956 /* PasesAsignadosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasesAsignadosCollectionViewCell.swift; sourceTree = "<group>"; };
 		00869E4C257946FB000A8DE1 /* RegistroReporteWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroReporteWS.swift; sourceTree = "<group>"; };
 		00869E4F25794895000A8DE1 /* RegistroReporteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroReporteViewModel.swift; sourceTree = "<group>"; };
+		009A576725BFD32E0077D03D /* ContactosVerificados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosVerificados.swift; sourceTree = "<group>"; };
+		009A576B25BFD4200077D03D /* ContactoVerificadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoVerificadoViewModel.swift; sourceTree = "<group>"; };
+		009A576E25BFD5E70077D03D /* ContactosVerificadosWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosVerificadosWS.swift; sourceTree = "<group>"; };
 		00A857B12575DD910020F61C /* HistorialPago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialPago.swift; sourceTree = "<group>"; };
 		00A857B42575DEFC0020F61C /* HistorialPagoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialPagoViewModel.swift; sourceTree = "<group>"; };
 		00A857B72575DFC40020F61C /* HistorialPagoWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialPagoWS.swift; sourceTree = "<group>"; };
@@ -460,7 +470,9 @@
 		0021FE0725807B7800E86856 /* Contactos */ = {
 			isa = PBXGroup;
 			children = (
+				009A576525BFD30A0077D03D /* Model */,
 				0021FE0825807B8300E86856 /* View */,
+				009A576625BFD3110077D03D /* ViewModel */,
 			);
 			path = Contactos;
 			sourceTree = "<group>";
@@ -729,6 +741,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		009A576525BFD30A0077D03D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				009A576725BFD32E0077D03D /* ContactosVerificados.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		009A576625BFD3110077D03D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				009A576B25BFD4200077D03D /* ContactoVerificadoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		00A857AD2575DD570020F61C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +879,7 @@
 			isa = PBXGroup;
 			children = (
 				00AB8E9125658505001C97E5 /* AnuncioCollectionViewCell.swift */,
+				0001001225C35C490068C8E8 /* AnuncioDetalleViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1337,6 +1366,7 @@
 				00FDB64E2559DFF10012E265 /* TokenManager.swift */,
 				00FDB64F2559DFF10012E265 /* Validators.swift */,
 				003EBA9B256D6DD7009082BC /* ImagePicker.swift */,
+				000BD1F025CDA29C0064720B /* GeneratorQR.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -1463,6 +1493,7 @@
 				0021FDF32580129000E86856 /* AmenidadesWS.swift */,
 				000082E4258D0FFB00B35D07 /* PasswordRecoveryWS.swift */,
 				A704A2E625B3D48900438EB1 /* DeleteWS.swift */,
+				009A576E25BFD5E70077D03D /* ContactosVerificadosWS.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1692,6 +1723,7 @@
 				003EBAAF256E10FE009082BC /* VerificarCodigoViewModel.swift in Sources */,
 				00A857EE2577EEA80020F61C /* Restriccion.swift in Sources */,
 				00AB8E9225658505001C97E5 /* AnuncioCollectionViewCell.swift in Sources */,
+				0001001325C35C490068C8E8 /* AnuncioDetalleViewController.swift in Sources */,
 				006011F8257AC41C00AE2956 /* EmpleadoDetalleWS.swift in Sources */,
 				00FDB6542559DFF10012E265 /* TokenManager.swift in Sources */,
 				002BC67B256EB11A006A2BFD /* TipoResindeteWS.swift in Sources */,
@@ -1761,6 +1793,7 @@
 				003EBAB5256E12A0009082BC /* VerificarCodigoWS.swift in Sources */,
 				00A857FA2577F3EB0020F61C /* BeneficioRestriccionTableViewCell.swift in Sources */,
 				00A857D025769C710020F61C /* TipoMascota.swift in Sources */,
+				009A576825BFD32E0077D03D /* ContactosVerificados.swift in Sources */,
 				002BC674256EAF78006A2BFD /* TipoResidente.swift in Sources */,
 				001F17692568D83D00C28CD5 /* MisReportesViewController.swift in Sources */,
 				00FDB699255B45F60012E265 /* NavigationMenuBaseController.swift in Sources */,
@@ -1791,6 +1824,7 @@
 				00AB8F0D2566180D001C97E5 /* Reporte.swift in Sources */,
 				00AB8E782564D350001C97E5 /* ResidencialViewModel.swift in Sources */,
 				00A857D92576F1630020F61C /* EmpleadoWS.swift in Sources */,
+				000BD1F125CDA29C0064720B /* GeneratorQR.swift in Sources */,
 				002BC6C32570545C006A2BFD /* EmpresaProveedorWS.swift in Sources */,
 				00AB8E8E256583AE001C97E5 /* AnuncioWS.swift in Sources */,
 				00AB8E8725657F57001C97E5 /* Anuncio.swift in Sources */,
@@ -1852,6 +1886,7 @@
 				00AB8E7B2564D6B1001C97E5 /* ResidencialViewController.swift in Sources */,
 				000082E2258D0F8600B35D07 /* PasswordRecoveryViewModel.swift in Sources */,
 				006011EF257AB26600AE2956 /* EmpleadoDetalleViewController.swift in Sources */,
+				009A576C25BFD4200077D03D /* ContactoVerificadoViewModel.swift in Sources */,
 				00AB900C256716FD001C97E5 /* RegistroMascotaViewController.swift in Sources */,
 				00A857C125768BDB0020F61C /* PerfilMascota.swift in Sources */,
 				00A857E82577EE710020F61C /* RestriccionResidencialViewController.swift in Sources */,
@@ -1860,6 +1895,7 @@
 				002BC67E256EB524006A2BFD /* TipoResidenteViewController.swift in Sources */,
 				00FDB68C255B3F740012E265 /* UsuariosViewController.swift in Sources */,
 				00FDB6582559DFF10012E265 /* AppData.swift in Sources */,
+				009A576F25BFD5E70077D03D /* ContactosVerificadosWS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2019,12 +2055,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "JOSUE RPlus App Signin DEV";
+				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin DEVJO";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2035,7 +2071,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = rplusapp/rplusapp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VJVUFPH6B9;
@@ -2044,12 +2080,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "JOSUE RPlus App Signin DEV";
+				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin ADHOCJO";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

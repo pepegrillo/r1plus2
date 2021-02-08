@@ -44,6 +44,10 @@ struct DataPaseAsignado: Codable {
     var status, idUser, createdBy, idEstadoPase: Int?
     var createdAt, updatedAt: String?
     
+    //agregados nuevos
+    var lugar: LugarPaseAsignado?
+    var tipo: TipoResidentePaseAsignado?
+    
     init(attributes: [String: Any]) {
         self.id = attributes["id"] as? Int
         self.code = attributes["code"] as? String
@@ -68,5 +72,35 @@ struct DataPaseAsignado: Codable {
         self.idEstadoPase = attributes["id_estado_pase"] as? Int
         self.createdAt = attributes["created_at"] as? String
         self.updatedAt = attributes["updated_at"] as? String
+        
+        if let contentLugar = attributes["lugar"] as? [String:Any] {
+            self.lugar = LugarPaseAsignado(attributes: contentLugar)
+        }
+        if let contentTipo = attributes["tipo"] as? [String:Any] {
+            self.tipo = TipoResidentePaseAsignado(attributes: contentTipo)
+        }
+        
+    }
+}
+
+// MARK: - LugarPaseAsignado
+struct LugarPaseAsignado: Codable {
+    
+    var name: String?
+    var description: String?
+    
+    init(attributes: [String: Any]) {
+        self.name = attributes["name"] as? String
+        self.description = attributes["description"] as? String
+    }
+}
+
+// MARK: - LugarPaseAsignado
+struct TipoResidentePaseAsignado: Codable {
+    
+    var name: String?
+    
+    init(attributes: [String: Any]) {
+        self.name = attributes["name"] as? String
     }
 }

@@ -21,6 +21,10 @@ class ResidencialViewController: UIViewController {
         initialMethod()
         
     }
+    
+    @IBAction func actionCerrar(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ResidencialViewController {
@@ -92,5 +96,16 @@ extension ResidencialViewController: UICollectionViewDataSource {
         cell.lblTitle?.text = data.name
         
         return cell
+    }
+}
+
+extension ResidencialViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       
+        // 60 padding, 20 space between cells
+        return CGSize(width: (UIScreen.main.bounds.width - (60+20))/2, height: 235)
+        
+        
     }
 }

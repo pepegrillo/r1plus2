@@ -80,8 +80,8 @@ class AppData {
                 dataArr.avatar = data.avatar?.base64EncodedString() ?? ""
                 dataArr.name = data.name
                 
-                realm.add(dataArr, update: .all)
-                print("guardandoxAOBJKECT----> \(dataArr)")
+                realm.add(dataArr, update: .modified)
+//                print("guardandoxAOBJKECT----> \(dataArr)")
             }
             
             try realm.commitWrite()
@@ -89,6 +89,30 @@ class AppData {
         } catch let e as NSError {
             print(e.description)
         }
+    }
+    
+    func updateContactosObject(paramPhone: String, paramExiste: String, paramVerificado: String, paramTipo: String, in realm: Realm = try! Realm(configuration: Utilities.bundleRealmConfig)) {
+        
+        do {
+            // filter data
+//            let contactos = realm.objects(sContactoObject.self).filter("existe == '1'")
+//            print("Realm update --------> \(contactos.count)")
+            print("Realm update --------> \(paramPhone)")
+            
+            // Query and update from any thread
+            // Update runtime
+            let theContacto = realm.objects(sContactoObject.self).filter("phone == '\(paramPhone)'")
+            try realm.write {
+                theContacto.setValue("\(paramExiste)", forKey: "existe")
+                theContacto.setValue("\(paramVerificado)", forKey: "verificado")
+                theContacto.setValue("\(paramTipo)", forKey: "tipo")
+            }
+            
+            
+        } catch let e as NSError {
+            print(e.description)
+        }
+        
     }
     
     func removeContactosObject(in realm: Realm = try! Realm(configuration: Utilities.bundleRealmConfig)) {

@@ -11,8 +11,8 @@ class PasesAsignadosCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var lblNombre: UILabel!
-    @IBOutlet weak var lblResidencia: UILabel!
+    @IBOutlet weak var imageQr: UIImageView!
+    @IBOutlet weak var imageResidencia: UIImageView!
     @IBOutlet weak var lblFecha: UILabel!
     @IBOutlet weak var lblHora: UILabel!
 }

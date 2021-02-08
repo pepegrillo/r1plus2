@@ -34,6 +34,13 @@ class OpcionesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func actionResidencial() {
+        
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "ResidencialViewController") as! ResidencialViewController
+        self.present(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func actionAgregarCasa() {
         
         let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "AgregarCasaViewController") as! AgregarCasaViewController
@@ -117,7 +124,7 @@ extension OpcionesViewController: UITableViewDataSource, UITableViewDelegate {
             case .miPerfil:
                 actionMiPerfil()
             case .agregarResidencial:
-                actionMiPerfil()
+                actionResidencial()
             case .agregarCasa:
                 actionAgregarCasa()
             case .directorio:

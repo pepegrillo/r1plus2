@@ -10,10 +10,10 @@ import UIKit
 class EmpleadoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var container: UIView!
-    @IBOutlet weak var imageAvatar: UIImageView!
+    @IBOutlet weak var containerImage: UIView!
     @IBOutlet weak var lblNombre: UILabel!
-    @IBOutlet weak var lblFecha: UILabel!
-    @IBOutlet weak var lblHora: UILabel!
+    @IBOutlet weak var lblApellido: UILabel!
+    @IBOutlet weak var lblTelefono: UILabel!
     @IBOutlet weak var btnDelete: UIButton!
     
 }

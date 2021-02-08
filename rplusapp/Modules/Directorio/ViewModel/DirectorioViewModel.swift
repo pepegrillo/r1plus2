@@ -77,7 +77,7 @@ class DirectorioViewModel {
             }
             
             //setting model
-            print("respuesta WS ----> \(dataResponse)")
+            print("respuesta WS ----> \(String(describing: dataResponse))")
             
             let arrGeneral = dataResponse?.data ?? .init()
             

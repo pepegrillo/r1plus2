@@ -7,25 +7,7 @@
 
 import UIKit
 import ContactsUI
-//import RealmSwift
-
-struct FetchedContact {
-    var firstName: String
-    var lastName: String
-    var telephone: String
-    var avatar: Data?
-}
-
-struct ContactosVerificados {
-    var idUser: String
-    var phone: String
-    var existe: String
-    var verificado: String // borrar este key, si ya esta clasificado
-    var tipo: String // que tipo de visita es
-    var avatar: Data?
-    var name: String
-    
-}
+import RealmSwift
 
 class ContactosViewController: UIViewController {
     
@@ -33,15 +15,50 @@ class ContactosViewController: UIViewController {
     
     var contacts = [FetchedContact]()
     var contactosVerificados = [ContactosVerificados]()
+    var contactosTelefonos = [String]()
     
+//    var contactosFromDB = [sContactoObject]()
     var contactosFromDB = AppData.sharedData.getContactsObject()
+    
+    private var contactosVerificadosViewModel: ContactoVerificadoViewModel {
+        ContactoVerificadoViewModel(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        contactosFromDB = AppData.sharedData.getContactsObject()
+        self.tvContactos.setEditing(false, animated: true)
+        self.tvContactos.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addContactsToArray(sentContacts: self.fetchContacts())
+        self.saveContactsInLocal()
+//        self.updateContactsFromWsToDB()
+        
+        
+//        self.tvContactos.reloadData()
         
         // init loading
-        initialMethod()
+        //        initialMethod()
+        
+//        print(fetchContacts())
+//        addContactsToArray(sentContacts: fetchContacts())
+//        saveContactsInLocal()
+//        loadContactsFromDB()
+//        updateContactsFromWsToDB()
+        ActivityIndicator.sharedIndicator.displayActivityIndicator(onView: self.view)
+        
+        contactosVerificados.forEach {
+            print("aqui \($0.phone)")
+            contactosTelefonos.append($0.phone)
+        }
+        
+        contactosVerificadosViewModel.requestPostContactosVerificados(body: contactosTelefonos)
         
     }
     
@@ -60,67 +77,91 @@ extension ContactosViewController {
         
         
         // Tableview Set DataSource and DataDelegate
-        tvContactos.dataSource = self
-        tvContactos.delegate = self
+        //        tvContactos.dataSource = self
+        //        tvContactos.delegate = self
         
         // init loading
-        fetchContacts()
-        contacts.sort(by: { $0.firstName < $1.firstName })
-        contactosVerificados.sort(by: { $0.name < $1.name })
+        //        fetchContacts()
         
+        //MARK: Adding contacts to array
+        //        addContactsToArray()
         
-        for (index, contact) in contacts.enumerated() {
+        //MARK: Save contacts
+        saveContactsInLocal()
+        
+//        DispatchQueue.main.async {
+//            self.tvContactos.reloadData()
+//        }
+        
+    }
+    
+    //MARK: Adding contacts to array
+    private func addContactsToArray(sentContacts: [FetchedContact]) {
+        
+        for (index, contact) in sentContacts.enumerated() {
             print("ALELYA --> \(contact.firstName)")
             contactosVerificados.append(ContactosVerificados(idUser: "\(index)", phone: contact.telephone, existe: "0", verificado: "0", tipo: "0", avatar: contact.avatar, name: "\(contact.firstName) \(contact.lastName)"))
         }
         
-        print("JJJJ--> \(contactosVerificados.count)")
-        
+        print("countContacts--> \(sentContacts.count)")
+    }
+    
+    //MARK: Save contacts
+    private func saveContactsInLocal() {
         // si base de datos de contactos es vacia guardar
         if (contactosFromDB.count == 0) {
             AppData.sharedData.saveContactosObject(arrContactos: contactosVerificados)
             print("--->GUARDAR<-----")
             
         }
+    }
+    
+    private func loadContactsFromDB() {
+    
+        contactosFromDB = AppData.sharedData.getContactsObject()
+    }
+    
+    private func updateContactsFromWsToDB() {
         
-        DispatchQueue.main.async {
-            self.tvContactos.reloadData()
+        contactosFromDB.forEach {
+            print("- \($0.name) -")
+//            AppData.sharedData.updateContactosObject(paramPhone: "\($0.phone)")
         }
+        
         
     }
     
-    private func fetchContacts() {
+    func fetchContacts()-> [FetchedContact] {
         // 1.
+        var contactsBlock = [FetchedContact]()
+        
         let store = CNContactStore()
-        store.requestAccess(for: .contacts) { (granted, error) in
-            if let error = error {
-                print("failed to request access", error)
-                return
-            }
-            if granted {
-                // 2.
-                let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactThumbnailImageDataKey]
-                let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-                do {
-                    // 3.
-                    try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
-                        
-                        self.contacts.append(FetchedContact(firstName: contact.givenName, lastName: contact.familyName, telephone: contact.phoneNumbers.first?.value.stringValue ?? "", avatar: contact.thumbnailImageData))
-                        //                        DispatchQueue.main.async {
-                        //                            self.tvContactos.reloadData()
-                        //                        }
-                        print("BAM ---->")
-                        
-                    })
-                } catch let error {
-                    print("Failed to enumerate contact", error)
-                }
-            } else {
-                print("access denied")
-            }
+        
+        // 2.
+        let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactThumbnailImageDataKey]
+        let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+        do {
+            // 3.
+            try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
+                
+                contactsBlock.append(FetchedContact(firstName: contact.givenName, lastName: contact.familyName, telephone: contact.phoneNumbers.first?.value.stringValue ?? "", avatar: contact.thumbnailImageData))
+                
+                print("fetchContact ----> \(contact.phoneNumbers.first?.value.stringValue ?? "No existe numero")")
+                
+            })
+        } catch let error {
+            print("Failed to enumerate contact", error)
         }
+        
+        contactsBlock.sort(by: { $0.firstName < $1.firstName })
+        
+        
+        
+        
+        return contactsBlock
     }
 }
+
 
 extension ContactosViewController: UITableViewDataSource {
     
@@ -145,9 +186,23 @@ extension ContactosViewController: UITableViewDataSource {
             }
             
             cell.lblName.text = dataDB.name
-            cell.lblPhone.text = dataDB.phone
+            cell.lblPhone.text = "\(dataDB.phone) - \(dataDB.tipo)"
+            
+            if (dataDB.existe == "0") {
+                cell.lblBadge.setTitle("No existe", for: .normal)
+            } else {
+                cell.lblBadge.setTitle("Existe", for: .normal)
+            }
+            
+            if (dataDB.verificado == "0") {
+                cell.lblBadgeVerificado.setTitle("No verificado", for: .normal)
+            } else {
+                cell.lblBadgeVerificado.setTitle("Verificado", for: .normal)
+            }
+            
             
             cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
+            cell.lblBadgeVerificado.customButton(bcColor: Constants.PaletteColors.statusBlue, borderRadius: Constants.App.cornerRadiusButton)
             
             return cell
             
@@ -166,6 +221,7 @@ extension ContactosViewController: UITableViewDataSource {
             
             cell.lblName.text = dataDBFirstTime.name
             cell.lblPhone.text = dataDBFirstTime.phone
+            cell.lblBadge.setTitle("Agenda", for: .normal)
             
             cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
             
@@ -182,12 +238,38 @@ extension ContactosViewController: UITableViewDataSource {
         } else {
             return contactosVerificados.count
         }
-
+        
     }
 }
 
 extension ContactosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let dataDB = contactosFromDB[indexPath.row]
+        
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "RegistroPaseViewController") as! RegistroPaseViewController
+        vc.paramFromContacto = 1
+        vc.paramContactoTelefono = dataDB.phone
+        vc.paramContactoNombre = dataDB.name
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
+}
+
+extension ContactosViewController: ContactoVerificadoDelegate {
+    func contactoVerificadoCompleted() {
+        DispatchQueue.main.async {
+            ActivityIndicator.sharedIndicator.hideActivityIndicator()
+            print("fin de servicio contactos")
+            self.tvContactos.reloadData()
+        }
+    }
+    
+    func contactoVerificadoCompleted(with error: String) {
+        DispatchQueue.main.async {
+            ActivityIndicator.sharedIndicator.hideActivityIndicator()
+            AlertManager.showAlert(withMessage: error, title: "Error")
+        }
+    }
+
 }

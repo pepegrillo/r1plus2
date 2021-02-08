@@ -59,7 +59,7 @@ struct RegistroWS {
             "fb_profile_access_token": "\(body[19])",
             "avatar": "\(body[20])"
         ]
-        print(body)
+        print("RegistroLOGIN \(body)")
         let url = Constants.WS.postRegistro
         RequestManager.sharedService.requestAPI(url: url, parameter: body as [String : Any], httpMethodType: .POST) { (response, error) in
             

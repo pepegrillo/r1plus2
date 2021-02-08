@@ -13,5 +13,6 @@ class ContactosTableViewCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblBadge: UIButton!
+    @IBOutlet weak var lblBadgeVerificado: UIButton!
     
 }

@@ -39,6 +39,10 @@ class RegistroPaseViewController: UIViewController {
     @IBOutlet weak var txtTelefonoEmpleado: UITextField!
     @IBOutlet weak var txtDuiEmpleado: UITextField!
     
+    @IBOutlet weak var containerEmailProveedor: UIView!
+    @IBOutlet weak var constraintContainerEmailProveedor: NSLayoutConstraint!
+    @IBOutlet weak var containerTelefonoProveedor: UIView!
+    @IBOutlet weak var constraintContainerTelefonoProveedor: NSLayoutConstraint!
     @IBOutlet weak var txtLugarProveedor: UITextField!
     @IBOutlet weak var constraintContainerAreaProveedor: NSLayoutConstraint!
     @IBOutlet weak var containerAreaProveedor: UIView!
@@ -130,11 +134,18 @@ class RegistroPaseViewController: UIViewController {
     var minHour: Date = Date(timeIntervalSince1970: 0)
     
     
+    // MARK: Seccion telefono seleccionado de contactos agenda
+    var paramFromContacto = 0, paramContactoTelefono = "", paramContactoNombre = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //setDesign
         setScreenDesign()
+        
+        // MARK: Seccion telefono seleccionado de contactos agenda
+        setFillRegistroPaseFromContacto()
     }
     
     @IBAction func getImageFromAlbumDui1(_ sender: UIButton) {
@@ -158,7 +169,7 @@ class RegistroPaseViewController: UIViewController {
             registroPaseEmpleadoViewModel.requestRegistroPaseEmpleado(body: ["\(txtNombre.text ?? "")","\(txtApellido.text ?? "")","\(txtTelefonoEmpleado.text ?? "")","\(txtDuiEmpleado.text ?? "")","\(imageDataDui1)","\(imageDataDui2)"])
         
         } else if (pickerTipoRegistroPaseSelected == "2") {
-            registroPaseProveedorViewModel.requestRegistroPaseProveedor(body: ["\(idEmpresaProveedorSelected ?? 0)","\(txtFecha.text ?? "")","\(txtHora.text ?? "")","\(pickerTipoLugarSelected )","\(idAreaComunSelected ?? 0)","\(txtNombre.text ?? "")","\(txtApellido.text ?? "")","\(txtEmailProveedor.text ?? "")","\(txtTelefonoProveedor.text ?? "")"])
+            registroPaseProveedorViewModel.requestRegistroPaseProveedor(body: ["\(idEmpresaProveedorSelected ?? 0)","\(txtFecha.text ?? "")","\(txtHora.text ?? "")","\(pickerTipoLugarSelected )","\(idAreaComunSelected ?? 0)"])
             
         } else  {
            
@@ -197,17 +208,21 @@ class RegistroPaseViewController: UIViewController {
             case "2":
                 print("proveedor selected")
 //                containerProveedor.layoutIfNeeded()
-                containerNombre.isHidden = false
-                constraintContainerNombre.constant = 85
-                containerApellido.isHidden = false
-                constraintContainerApellido.constant = 85
+                containerNombre.isHidden = true
+                constraintContainerNombre.constant = 0
+                containerApellido.isHidden = true
+                constraintContainerApellido.constant = 0
+                containerEmailProveedor.isHidden = true
+                constraintContainerEmailProveedor.constant = 0
+                containerTelefonoProveedor.isHidden = true
+                constraintContainerTelefonoProveedor.constant = 0
                 containerDocumentoImagen.isHidden = true
                 constraintContainerDocumentoImagen.constant = 0
                 containerProveedor.isHidden = false
 //                view.sendSubviewToBack(containerProveedor)
 //                containerProveedor.topAnchor.constraint(equalTo: containerTipoVisita.bottomAnchor, constant: 10).isActive = true
                 constraintContainerProveedor.constant = 461
-                constraintContainerProveedorTopAnchor.constant = -7
+                constraintContainerProveedorTopAnchor.constant = -30
                 containerEmpleado.isHidden = true
                 constraintContainerEmpleado.constant = 0
                 containerVisita.isHidden = true
@@ -228,6 +243,7 @@ class RegistroPaseViewController: UIViewController {
                 constraintContainerDocumentoImagen.constant = 0
                 containerProveedor.isHidden = true
                 constraintContainerProveedor.constant = 0
+                constraintContainerProveedorTopAnchor.constant = 0
                 containerEmpleado.isHidden = true
                 constraintContainerEmpleado.constant = 0
                 containerVisita.isHidden = false
@@ -445,6 +461,20 @@ extension RegistroPaseViewController {
         
         //dismiss date picker dialog
         self.view.endEditing(true)
+    }
+    
+    // MARK: Seccion telefono seleccionado de contactos agenda
+    private func setFillRegistroPaseFromContacto() {
+        
+        if (paramFromContacto == 1) {
+                
+            self.txtNombre.text = paramContactoNombre
+            self.txtApellido.text = paramContactoNombre
+            self.txtTelefonoVisita.text = paramContactoTelefono
+            self.txtTelefonoProveedor.text = paramContactoTelefono
+            self.txtTelefonoEmpleado.text = paramContactoTelefono
+        }
+        
     }
 }
 

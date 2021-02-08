@@ -196,15 +196,23 @@ extension HomeViewController: UICollectionViewDelegate {
             let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PaseAsignadoDetalleViewController") as! PaseAsignadoDetalleViewController
             vc.paramCondominio = data.code?.uppercased()
             vc.paramNombre = "\(data.name?.capitalized ?? "") \(data.lastName?.capitalized ?? "")"
-            vc.paramTipoUsuario = data.phone
-            vc.paramCasa = data.phone
+            vc.paramTipoUsuario = data.tipo?.name ?? ""
+            vc.paramCasa = data.lugar?.name ?? "NA"
             vc.paramFecha = data.date
             vc.paramHora = data.hour
+            vc.paramCode = data.code
             navigationController?.pushViewController(vc, animated: true)
             
         } else {
             
-            print("tap anuncio")
+            let data = anuncioViewModel.listArray[indexPath.row]
+            
+            let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "AnuncioDetalleViewController") as! AnuncioDetalleViewController
+            vc.paramImage = data.image ?? ""
+            vc.paramVigencia = data.expirationDate ?? ""
+            vc.paramTitulo = data.title ?? ""
+            vc.paramDescripcion = data.description ?? ""
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -229,11 +237,13 @@ extension HomeViewController: UICollectionViewDataSource {
             
             let data = pasesAsignadosViewModel.listArray[indexPath.row]
             
-            cell.container.cornerRadiusViewBorder(bcColor: .white, borderRadius: Constants.App.cornerRadiusView)
+//            cell.container.cornerRadiusViewBorder(bcColor: .white, borderRadius: Constants.App.cornerRadiusView)
             
 
-            cell.lblNombre?.text = data.name?.capitalized
-            cell.lblResidencia?.text = data.code?.uppercased()
+//            cell.lblNombre?.text = data.name?.capitalized
+//            cell.lblResidencia?.text = data.code?.uppercased()
+            let imageQR = GeneratorQR.createGeneratorQR.generateQRCode(from: "\(data.code ?? "")")
+            cell.imageQr.image = imageQR
             cell.lblFecha?.text = data.date
             cell.lblHora?.text = data.hour
             

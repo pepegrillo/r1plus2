@@ -132,7 +132,7 @@ class ReporteViewModel {
             }
             
             //setting model
-            print("respuesta WS ----> \(dataResponse)")
+            print("respuesta WS ----> \(String(describing: dataResponse))")
             self.listArrayMisReportes.append(contentsOf: (dataResponse?.data!)!)
             
         })

@@ -24,6 +24,6 @@ target 'rplusapp' do
   pod 'FBSDKLoginKit'
   
   # Pod Google Signin
-  pod 'GoogleSignIn'
+  pod 'GoogleSignIn', '~> 5.0'
   
 end

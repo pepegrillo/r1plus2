@@ -62,6 +62,7 @@ struct Constants {
         static let postRegistroMascota = "\(baseURLAPI)\(complementURL)mascota"
         static let postRegistroReporte = "\(baseURLAPI)\(complementURL)reporte"
         static let postAmenidades = "\(baseURLAPI)\(complementURL)reserva"
+        static let postContacto = "\(baseURLAPI)\(complementURL)contacto"
         
         
         // images

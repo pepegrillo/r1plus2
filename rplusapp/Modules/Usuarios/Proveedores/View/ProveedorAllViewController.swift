@@ -72,7 +72,9 @@ extension ProveedorAllViewController: UITableViewDataSource {
         
         let data = proveedorViewModel.listArray[indexPath.row]
         
-        cell.lblTitle.text = data.name ?? ""
+        cell.imageAvatar.makeRounded()
+        cell.imageAvatar.sd_setImage(with: URL(string: "\(data.logo ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
+        cell.lblTitle.text = "\(data.date ?? "") - \(data.hour ?? "")"
         
         return cell
     }
@@ -92,7 +94,8 @@ extension ProveedorAllViewController: UITableViewDelegate {
         vc.paramTipoPerfil = "proveedor"
         vc.paramNombre = "\(data.name ?? "") \(data.lastName ?? "")"
         vc.paramLogo = data.logo
-        vc.paramPhone = data.telefonos?[0].phone
+        vc.paramFecha = data.date ?? "-"
+        vc.paramHora = data.hour ?? "-"
         navigationController?.pushViewController(vc, animated: true)
         
         print("\(String(describing: data.lastName))")

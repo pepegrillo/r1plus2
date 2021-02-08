@@ -252,7 +252,7 @@ extension LoginViewController {
             self.keySocialId = user.userID ?? ""
             UserDefaults.standard.setValue("\(user.userID ?? "")", forKey: "Google_ID")
             UserDefaults.standard.setValue("\(user.authentication.idToken ?? "")", forKey: "Google_Token")
-            loginRplusViewModel.requestLoginRplus(body: ["\(user.profile.email ?? "")", "\(user.userID ?? "")", "3", "", "", "\(user.userID ?? "")", "\(user.authentication.idToken ?? "")", "", ""])
+            loginRplusViewModel.requestLoginRplus(body: ["\(user.profile.email ?? "")", "\(user.userID ?? "")", "3", "", "", "\(user.userID ?? "")", "\(user.userID ?? "")", "", ""])
             
             
         } else {

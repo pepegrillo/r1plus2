@@ -212,3 +212,17 @@ extension ReportesViewController: UICollectionViewDataSource {
     }
 }
 
+extension ReportesViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if (collectionView == self.cvAlerta) {
+            // 60 padding, 20 space between cells
+            return CGSize(width: (UIScreen.main.bounds.width - (10+10))/5, height: 108)
+        } else {
+            // 60 padding, 20 space between cells
+            return CGSize(width: (UIScreen.main.bounds.width - (60+20))/3, height: 145)
+        }
+        
+    }
+}
+

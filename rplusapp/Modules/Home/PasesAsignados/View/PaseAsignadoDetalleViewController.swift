@@ -15,11 +15,15 @@ class PaseAsignadoDetalleViewController: UIViewController {
     @IBOutlet weak var lblCasa: UILabel!
     @IBOutlet weak var lblFecha: UILabel!
     @IBOutlet weak var lblHora: UILabel!
+    @IBOutlet weak var imageQR: UIImageView!
     
-    var paramCondominio, paramNombre, paramTipoUsuario, paramCasa, paramFecha, paramHora: String?
+    var paramCondominio, paramNombre, paramTipoUsuario, paramCasa, paramFecha, paramHora, paramCode: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set design
+        setScreenDesign()
         
         // set data
         fillData()
@@ -28,6 +32,11 @@ class PaseAsignadoDetalleViewController: UIViewController {
 }
 
 extension PaseAsignadoDetalleViewController {
+    
+    private func setScreenDesign() {
+        
+        imageQR.image = GeneratorQR.createGeneratorQR.generateQRCode(from: paramCode ?? "")
+    }
     
     private func fillData() {
         

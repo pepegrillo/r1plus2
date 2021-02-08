@@ -33,25 +33,28 @@ struct Proveedor: Codable {
     }
 }
 
-// MARK: - DataPerfil
+// MARK: - DataProveedor
 struct DataProveedor: Codable {
     var id: Int?
-    var name, lastName, avatar, logo: String?
-    var telefonos: [DataProveedorTelefono]?
+    var name, lastName, date, hour, logo: String?
+//    var telefonos: [DataProveedorTelefono]?
+    var telefonos: String?
     
     init(attributes: [String: Any]) {
         self.id = attributes["id"] as? Int
         self.name = attributes["name"] as? String
         self.lastName = attributes["last_name"] as? String
-        self.avatar = attributes["avatar"] as? String
+        self.date = attributes["date"] as? String
+        self.hour = attributes["hour"] as? String
         self.logo = attributes["logo"] as? String
-        if let datas = attributes["telefonos"] as? [[String:Any]] {
-            var model = [DataProveedorTelefono]()
-            datas.forEach({
-                model.append(DataProveedorTelefono(attributes: $0))
-            })
-            self.telefonos = model
-        }
+        self.telefonos = attributes["phone"] as? String
+//        if let datas = attributes["telefonos"] as? [[String:Any]] {
+//            var model = [DataProveedorTelefono]()
+//            datas.forEach({
+//                model.append(DataProveedorTelefono(attributes: $0))
+//            })
+//            self.telefonos = model
+//        }
         
     }
 }

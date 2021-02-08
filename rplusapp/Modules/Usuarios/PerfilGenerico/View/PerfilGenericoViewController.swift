@@ -13,11 +13,12 @@ class PerfilGenericoViewController: UIViewController {
     
     @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var containerForm1: UIView!
-    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var lblFecha: UILabel!
+    @IBOutlet weak var lblHora: UILabel!
     
     var paramTipoPerfil = ""
     
-    var paramLogo, paramNombre, paramPhone: String?
+    var paramLogo, paramNombre, paramFecha, paramHora: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,8 @@ extension PerfilGenericoViewController {
             imageAvatar.sd_setImage(with: URL(string: paramLogo ?? ""), placeholderImage: UIImage(named:Constants.App.imagePlaceholder))
             
             
-            lblPhone.text = paramPhone
+            lblFecha.text = paramFecha
+            lblHora.text = paramHora
         }
     }
 }

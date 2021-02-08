@@ -8,7 +8,8 @@
 import UIKit
 
 class GeneralModelTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
 
 }

@@ -291,7 +291,9 @@ extension UsuariosViewController: UICollectionViewDelegate {
             vc.paramTipoPerfil = "proveedor"
             vc.paramNombre = "\(data.name ?? "") \(data.lastName ?? "")"
             vc.paramLogo = data.logo
-            vc.paramPhone = data.telefonos?[0].phone
+//            vc.paramPhone = data.telefonos?[0].phone
+            vc.paramFecha = data.date ?? "-"
+            vc.paramHora = data.hour ?? "-"
             navigationController?.pushViewController(vc, animated: true)
             
         } else {
@@ -328,10 +330,11 @@ extension UsuariosViewController: UICollectionViewDataSource {
             let data = visitaFrecuenteViewModel.listArray[indexPath.row]
             
             cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
+            cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
             cell.lblNombre?.text = data.name?.capitalized
             cell.lblApellido?.text = data.lastName?.capitalized
-            cell.lblTelefono?.text = "00"
+            cell.lblTelefono?.text = "\(data.idUser ?? 0)"
             
             // actions CRUD
             cell.btnDelete.tag = indexPath.row
@@ -345,10 +348,12 @@ extension UsuariosViewController: UICollectionViewDataSource {
             let data = proveedorViewModel.listArray[indexPath.row]
             
             cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
+            cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
+            cell.imageAvatar.makeRounded()
             cell.imageAvatar.sd_setImage(with: URL(string: "\(data.logo ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
-            cell.lblNombre?.text = data.name?.capitalized
-            cell.lblEmpresa?.text = data.lastName?.capitalized
+            cell.lblFecha?.text = data.date ?? ""
+            cell.lblHora?.text = data.hour ?? ""
             
             return cell
         
@@ -359,11 +364,12 @@ extension UsuariosViewController: UICollectionViewDataSource {
             let data = empleadoViewModel.listArray[indexPath.row]
             
             cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
+            cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
-            cell.imageAvatar.sd_setImage(with: URL(string: "\(data.imgDuiFrente ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
+//            cell.imageAvatar.sd_setImage(with: URL(string: "\(data.imgDuiFrente ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
             cell.lblNombre?.text = data.name?.capitalized
-            cell.lblFecha?.text = data.lastName?.capitalized
-            cell.lblHora?.text = data.telefonos?[0].phone
+            cell.lblApellido?.text = data.lastName?.capitalized
+            cell.lblTelefono?.text = data.telefonos?[0].phone
             
             // actions CRUD
             cell.btnDelete.tag = indexPath.row

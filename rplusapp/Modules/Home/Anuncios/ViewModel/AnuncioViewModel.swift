@@ -75,7 +75,7 @@ class AnuncioViewModel {
             }
             
             //setting model
-            print("respuesta WS ----> \(dataResponse)")
+            print("respuesta WS ----> \(String(describing: dataResponse))")
             self.listArray.removeAll()
             self.listArray.append(contentsOf: (dataResponse?.data!)!)
             

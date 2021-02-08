@@ -23,14 +23,14 @@ struct TipoMascota: Codable {
         self.success = attributes["success"] as? Bool
         self.errorCode = attributes["errorCode"] as? Int
         self.message = attributes["message"] as? String
-        if let datas = attributes["data"] as? [[[String:Any]]] {
+//        if let datas = attributes["data"] as? [[[String:Any]]] {
+        if let datas = attributes["data"] as? [[String:Any]] {
             var model = [DataTipoMascota]()
 
             datas.forEach({
-                $0.forEach({
+//                $0.forEach({
                     model.append(DataTipoMascota(attributes: $0))
-                })
-                
+//                })
             })
             
             self.data = model

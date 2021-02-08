@@ -21,7 +21,7 @@ struct LoginRplusWS {
             "fb_profile_userID": body[7],
             "fb_profile_access_token": body[8]
         ]
-        print(body)
+        print("LOGINRPLUS \(body)")
         let url = Constants.WS.postLoginRplus
         RequestManager.sharedService.requestAPI(url: url, parameter: body as [String : Any], httpMethodType: .POST) { (response, error) in
             

@@ -69,7 +69,7 @@ class AlertaViewModel {
             }
             
             //setting model
-            print("respuesta WS ----> \(dataResponse)")
+            print("respuesta WS ----> \(String(describing: dataResponse))")
             self.listArray.append(contentsOf: (dataResponse?.data!)!)
             
         })

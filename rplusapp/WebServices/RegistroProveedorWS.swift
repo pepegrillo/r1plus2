@@ -15,11 +15,7 @@ struct RegistroProveedorWS {
             "date": body[1],
             "hour": body[2],
             "place_type": body[3],
-            "id_lugar": body[4],
-            "name": body[5],
-            "last_name": body[6],
-            "email": body[7],
-            "phone": body[8]
+            "id_lugar": body[4]
         ]
         
         

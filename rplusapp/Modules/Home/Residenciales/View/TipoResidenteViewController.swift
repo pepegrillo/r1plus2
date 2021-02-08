@@ -26,6 +26,10 @@ class TipoResidenteViewController: UIViewController {
         initialMethod()
     }
     
+    @IBAction func actionCerrar(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension TipoResidenteViewController {
