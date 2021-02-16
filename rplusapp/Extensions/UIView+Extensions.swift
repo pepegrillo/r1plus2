@@ -22,9 +22,6 @@ extension UIView {
     }
     
     func cornerRadiusView(borderRadius: CGFloat){
-        
-        layer.borderWidth = 0.75
-        layer.borderColor = Constants.PaletteColors.rBorderForm.cgColor
         layer.cornerRadius = borderRadius
         layer.masksToBounds = true
     }

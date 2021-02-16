@@ -81,7 +81,6 @@ extension HomeViewController: PerfilViewModelDelegate {
             
             self.imgAvatar.sd_setImage(with: URL(string: dataPerfil[0].avatar ?? ""), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
             self.lblNombre.text = dataPerfil[0].nombre?.capitalized
-            self.lblCondominio.text = dataPerfil[0].residencial
             self.lblTipoResidente.text = dataPerfil[0].tipoResidente
             
             if dataPerfil[0].tieneResidencial == 1{
@@ -257,6 +256,7 @@ extension HomeViewController: UICollectionViewDataSource {
             let data = anuncioViewModel.listArray[indexPath.row]
             
             cell.container.cornerRadiusViewBorder(bcColor: .white, borderRadius: Constants.App.cornerRadiusView)
+            cell.containerTitle.cornerRadiusView(borderRadius: Constants.App.cornerRadiusButtonLarge)
             
             cell.imageBackground.sd_setImage(with: URL(string: "\(data.image ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
             cell.lblTitle?.text = data.title

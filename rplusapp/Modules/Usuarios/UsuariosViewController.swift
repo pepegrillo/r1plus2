@@ -333,7 +333,7 @@ extension UsuariosViewController: UICollectionViewDataSource {
             cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
             cell.lblNombre?.text = data.name?.capitalized
-            cell.lblApellido?.text = data.lastName?.capitalized
+            cell.lblTipoVisita?.text = data.lastName?.capitalized
             cell.lblTelefono?.text = "\(data.idUser ?? 0)"
             
             // actions CRUD
@@ -366,7 +366,7 @@ extension UsuariosViewController: UICollectionViewDataSource {
             cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
-//            cell.imageAvatar.sd_setImage(with: URL(string: "\(data.imgDuiFrente ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
+            cell.imageAvatar.sd_setImage(with: URL(string: "\(data.imgDuiFrente ?? "")"), placeholderImage: UIImage(named: "IconEmpleado"))
             cell.lblNombre?.text = data.name?.capitalized
             cell.lblApellido?.text = data.lastName?.capitalized
             cell.lblTelefono?.text = data.telefonos?[0].phone

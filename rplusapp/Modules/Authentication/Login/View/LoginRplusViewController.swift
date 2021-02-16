@@ -48,7 +48,7 @@ extension LoginRplusViewController {
         self.txtUsername.aEmailTxt(placeHolder: "Ingrese su correo")
         self.txtPassword.aPasswordTxt(placeHolder: "Ingrese su contraseña")
         
-        self.btnLogin.cornerButton(borderRadius: Constants.App.cornerRadiusButton)
+        self.btnLogin.cornerButtonColors(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
     }
     
     // MARK: validate form

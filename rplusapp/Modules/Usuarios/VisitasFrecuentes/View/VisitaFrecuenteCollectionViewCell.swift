@@ -12,7 +12,7 @@ class VisitaFrecuenteCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var containerImage: UIView!
     @IBOutlet weak var lblNombre: UILabel!
-    @IBOutlet weak var lblApellido: UILabel!
+    @IBOutlet weak var lblTipoVisita: UILabel!
     @IBOutlet weak var lblTelefono: UILabel!
     @IBOutlet weak var btnDelete: UIButton!
 }

@@ -15,5 +15,6 @@ class EmpleadoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblApellido: UILabel!
     @IBOutlet weak var lblTelefono: UILabel!
     @IBOutlet weak var btnDelete: UIButton!
+    @IBOutlet weak var imageAvatar: UIImageView!
     
 }

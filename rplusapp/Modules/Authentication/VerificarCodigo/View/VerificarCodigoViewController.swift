@@ -53,7 +53,7 @@ extension VerificarCodigoViewController {
     private func setScreenDesign() {
         
         self.txtVerificarCodigo.aNumberTxt()
-        self.btnVerificarCodigo.cornerButton(borderRadius: Constants.App.cornerRadiusButton)
+        self.btnVerificarCodigo.cornerButtonColors(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
         
         if idPasswordRecovery == 1 {
             self.containerPasswordRecovery.isHidden = false

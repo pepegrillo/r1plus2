@@ -60,4 +60,13 @@ extension UIButton {
         layer.masksToBounds = true
     }
     
+    func cornerButtonColors(bcColor: UIColor? = Constants.PaletteColors.rButtonBg, titleColor: UIColor? = .white, borderRadius: CGFloat){
+        layer.borderWidth = 0.75
+        layer.borderColor = bcColor?.alpha(0.7).cgColor
+        layer.cornerRadius = borderRadius
+        layer.masksToBounds = true
+        setTitleColor(titleColor, for: .normal)
+        layer.backgroundColor = bcColor?.cgColor
+    }
+    
 }

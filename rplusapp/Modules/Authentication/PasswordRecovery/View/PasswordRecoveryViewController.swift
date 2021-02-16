@@ -37,7 +37,7 @@ extension PasswordRecoveryViewController {
     private func setScreenDesign() {
         
         self.txtTelefono.aPhoneTxt()
-        self.btnSiguiente.cornerButton(borderRadius: Constants.App.cornerRadiusButton)
+        self.btnSiguiente.cornerButtonColors(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
     }
     
     private func goToVerificacion() {

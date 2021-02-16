@@ -120,6 +120,13 @@ struct Constants {
         static let statusYellow = UIColor(hex: "#EABD00")
         static let statusBlue = UIColor(hex: "#0092CC")
         
+        //color default
+        static let colorFirst = UIColor(hex: "#75C095")
+        static let colorFirstDark = UIColor(hex: "#0C8643")
+        static let colorSecond = UIColor(hex: "#F1DD6A")
+        static let colorThird = UIColor(hex: "#01A6BA")
+        static let colorFourth = UIColor(hex: "#A0ABB1")
+        
 //        static let aBorderGray = UIColor(hex: "#c9c9c9")
     }
     

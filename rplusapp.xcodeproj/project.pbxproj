@@ -170,6 +170,7 @@
 		00E61C71257EE0C6000F6BD2 /* EmpleadoAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E61C70257EE0C6000F6BD2 /* EmpleadoAllViewController.swift */; };
 		00E61C74257EE6E8000F6BD2 /* ProveedorAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E61C73257EE6E8000F6BD2 /* ProveedorAllViewController.swift */; };
 		00E61C7A257EEE29000F6BD2 /* ShowCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E61C79257EEE29000F6BD2 /* ShowCaseViewController.swift */; };
+		00F6068425D850E5000971E9 /* DetalleVisitasFrecuentesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F6068325D850E5000971E9 /* DetalleVisitasFrecuentesViewController.swift */; };
 		00FDB60C2559D80E0012E265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB60B2559D80E0012E265 /* AppDelegate.swift */; };
 		00FDB60E2559D80E0012E265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB60D2559D80E0012E265 /* SceneDelegate.swift */; };
 		00FDB6102559D80E0012E265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB60F2559D80E0012E265 /* ViewController.swift */; };
@@ -374,6 +375,7 @@
 		00E61C70257EE0C6000F6BD2 /* EmpleadoAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoAllViewController.swift; sourceTree = "<group>"; };
 		00E61C73257EE6E8000F6BD2 /* ProveedorAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorAllViewController.swift; sourceTree = "<group>"; };
 		00E61C79257EEE29000F6BD2 /* ShowCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseViewController.swift; sourceTree = "<group>"; };
+		00F6068325D850E5000971E9 /* DetalleVisitasFrecuentesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleVisitasFrecuentesViewController.swift; sourceTree = "<group>"; };
 		00FDB6082559D80E0012E265 /* rplusapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rplusapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FDB60B2559D80E0012E265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00FDB60D2559D80E0012E265 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 				00AB8EBD2565B12C001C97E5 /* VisitaFrecuenteCollectionViewCell.swift */,
 				001F17622568C2CC00C28CD5 /* VisitaFrecuenteListViewController.swift */,
 				001F17652568C43300C28CD5 /* VisitaFrecuenteTableViewCell.swift */,
+				00F6068325D850E5000971E9 /* DetalleVisitasFrecuentesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1841,6 +1844,7 @@
 				00AB8F1025661E55001C97E5 /* AlertaViewModel.swift in Sources */,
 				00601204257ACCBC00AE2956 /* PasesAsignadosWS.swift in Sources */,
 				00FDB6362559DCF90012E265 /* Utilities.swift in Sources */,
+				00F6068425D850E5000971E9 /* DetalleVisitasFrecuentesViewController.swift in Sources */,
 				003EBA54256CAF96009082BC /* LoginRplusViewController.swift in Sources */,
 				0021FDF42580129000E86856 /* AmenidadesWS.swift in Sources */,
 				00AB8F19256621CD001C97E5 /* ReporteViewModel.swift in Sources */,

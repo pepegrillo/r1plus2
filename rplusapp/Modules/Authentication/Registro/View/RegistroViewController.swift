@@ -103,7 +103,7 @@ extension RegistroViewController {
         // hide password fields if necessary
         hidePaswordFields()
         
-        self.btnRegisterUser.cornerButton(borderRadius: Constants.App.cornerRadiusButton)
+        self.btnRegisterUser.cornerButtonColors(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
     }
     
     //create picker

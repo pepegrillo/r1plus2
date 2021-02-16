@@ -12,4 +12,5 @@ class AnuncioCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var containerTitle: UIView!
 }
