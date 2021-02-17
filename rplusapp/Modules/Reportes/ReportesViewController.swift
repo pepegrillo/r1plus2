@@ -193,7 +193,7 @@ extension ReportesViewController: UICollectionViewDataSource {
             let data = reporteViewModel.listArray[indexPath.row]
             
 //            cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
-            cell.contentView.cornerRadiusShadowView()
+            cell.contentView.cornerRadiusShadowViewWithColor(bcColor: Constants.PaletteColors.colorFirst)
             
             let svgCoder = SDImageSVGKCoder.shared
             SDImageCodersManager.shared.addCoder(svgCoder)

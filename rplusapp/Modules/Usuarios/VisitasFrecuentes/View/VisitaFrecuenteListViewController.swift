@@ -123,8 +123,8 @@ extension VisitaFrecuenteListViewController: UITableViewDelegate {
         
         let data = visitaFrecuenteViewModel.listArray[indexPath.row]
         
-        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PerfilGenericoViewController") as! PerfilGenericoViewController
-        vc.paramNombre = "\(data.name ?? "") \(data.lastName ?? "")"
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DetalleVisitasFrecuentesViewController") as! DetalleVisitasFrecuentesViewController
+        vc.paramID = data.id ?? 0
         navigationController?.pushViewController(vc, animated: true)
         
         print("\(data.name ?? "")")

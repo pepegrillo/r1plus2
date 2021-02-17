@@ -91,8 +91,9 @@ extension ReporteRegistroViewController {
     //set design
     private func setScreenDesign() {
         
-        containerForm1.cornerRadiusViewBorder(bcColor: Constants.PaletteColors.aLightGray, borderRadius: Constants.App.cornerRadius)
-        containerForm2.cornerRadiusViewBorder(bcColor: Constants.PaletteColors.aLightGray, borderRadius: Constants.App.cornerRadius)
+        containerForm1.cornerRadiusViewBorder(bcColor: .white, borderRadius: Constants.App.cornerRadius)
+//        containerForm2.cornerRadiusViewBorder(bcColor: Constants.PaletteColors.aLightGray, borderRadius: Constants.App.cornerRadius)
+        self.imgReporteDetail.makeRounded()
         
         //delegate to UIPickerImage
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)

@@ -11,5 +11,6 @@ class GeneralModelTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnDelete: UIButton!
 
 }

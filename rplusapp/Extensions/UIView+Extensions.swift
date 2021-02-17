@@ -21,6 +21,18 @@ extension UIView {
 
     }
     
+    func cornerRadiusShadowViewWithColor(bcColor: UIColor){
+        layer.borderWidth = 2.0
+        layer.borderColor = bcColor.cgColor
+        layer.cornerRadius = Constants.App.cornerRadiusButton
+        layer.shadowColor = UIColor.red.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 3, height: 3)
+        layer.shadowRadius = 3
+        layer.masksToBounds = true
+
+    }
+    
     func cornerRadiusView(borderRadius: CGFloat){
         layer.cornerRadius = borderRadius
         layer.masksToBounds = true

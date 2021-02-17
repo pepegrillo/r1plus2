@@ -29,6 +29,12 @@ class PaseAsignadoDetalleViewController: UIViewController {
         fillData()
         
     }
+    
+    @IBAction func actionShowImageQR(_ sender: UIButton) {
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PaseImageQRViewController") as! PaseImageQRViewController
+        vc.paramImageQR = paramCode ?? ""
+        self.present(vc, animated: true)
+    }
 }
 
 extension PaseAsignadoDetalleViewController {

@@ -189,20 +189,20 @@ extension ContactosViewController: UITableViewDataSource {
             cell.lblPhone.text = "\(dataDB.phone) - \(dataDB.tipo)"
             
             if (dataDB.existe == "0") {
-                cell.lblBadge.setTitle("No existe", for: .normal)
+                cell.lblBadge.setTitle("No registrado", for: .normal)
             } else {
-                cell.lblBadge.setTitle("Existe", for: .normal)
+                cell.lblBadge.setTitle("Registrado", for: .normal)
             }
             
             if (dataDB.verificado == "0") {
                 cell.lblBadgeVerificado.setTitle("No verificado", for: .normal)
             } else {
-                cell.lblBadgeVerificado.setTitle("Verificado", for: .normal)
+                cell.lblBadgeVerificado.setTitle("\(dataDB.tipo)", for: .normal)
             }
             
             
-            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
-            cell.lblBadgeVerificado.customButton(bcColor: Constants.PaletteColors.statusBlue, borderRadius: Constants.App.cornerRadiusButton)
+            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
+            cell.lblBadgeVerificado.customButton(bcColor: Constants.PaletteColors.colorSecond, borderRadius: Constants.App.cornerRadiusButton)
             
             return cell
             
@@ -223,7 +223,7 @@ extension ContactosViewController: UITableViewDataSource {
             cell.lblPhone.text = dataDBFirstTime.phone
             cell.lblBadge.setTitle("Agenda", for: .normal)
             
-            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
+            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.colorFirst, borderRadius: Constants.App.cornerRadiusButton)
             
             return cell
             

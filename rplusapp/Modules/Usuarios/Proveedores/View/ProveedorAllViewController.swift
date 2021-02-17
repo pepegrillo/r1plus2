@@ -13,11 +13,39 @@ class ProveedorAllViewController: UIViewController {
     
     private var proveedorViewModel = ProveedorViewModel()
     
+    // MARK: - Delete & Edit General Actions
+    private var deleteViewModel: DeleteViewModel {
+        DeleteViewModel(delegate: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // init loading
         initialMethod()
+    }
+    
+    @IBAction func actionProveedorDelete(_ sender : UIButton){
+        print(sender.tag)
+        let data = proveedorViewModel.listArray[sender.tag]
+        
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Eliminar", message: "¿Desea eliminar el pase de - \(data.name?.capitalized ?? "visita") ?", preferredStyle: .alert)
+
+        // Create the actions
+        let okAction = UIAlertAction(title: "Eliminar", style: UIAlertAction.Style.destructive) {
+            UIAlertAction in
+            self.deleteViewModel.requestDelete(idIdElement: data.id ?? 0, idUrl: "proveedor")
+        }
+        let cancelAction = UIAlertAction(title:"Cancelar", style: .cancel) { (action: UIAlertAction) in }
+
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
 }
@@ -76,6 +104,9 @@ extension ProveedorAllViewController: UITableViewDataSource {
         cell.imageAvatar.sd_setImage(with: URL(string: "\(data.logo ?? "")"), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
         cell.lblTitle.text = "\(data.date ?? "") - \(data.hour ?? "")"
         
+        // actions CRUD
+        cell.btnDelete.tag = indexPath.row
+        
         return cell
     }
     
@@ -101,3 +132,22 @@ extension ProveedorAllViewController: UITableViewDelegate {
         print("\(String(describing: data.lastName))")
     }
 }
+
+extension ProveedorAllViewController: DeleteDelegate {
+    func DeleteRequestCompleted() {
+        DispatchQueue.main.async {
+            ActivityIndicator.sharedIndicator.hideActivityIndicator()
+            AlertManager.showAlert(withMessage: "Elemento eliminado exitoso", title: "Mensaje")
+            self.pageSetup()
+        }
+    }
+    
+    func DeleteRequestCompleted(with error: String) {
+        DispatchQueue.main.async {
+            ActivityIndicator.sharedIndicator.hideActivityIndicator()
+            AlertManager.showAlert(withMessage: error, title: "Error")
+            
+        }
+    }
+}
+

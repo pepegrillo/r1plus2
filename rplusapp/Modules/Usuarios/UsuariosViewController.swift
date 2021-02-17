@@ -116,7 +116,7 @@ class UsuariosViewController: UIViewController {
             UIAlertAction in
             NSLog("OK Pressed")
             self.typeDelete = 2
-            self.deleteViewModel.requestDelete(idIdElement: data.id ?? 0, idUrl: "empleado")
+            self.deleteViewModel.requestDelete(idIdElement: data.id ?? 0, idUrl: "proveedor")
         }
         let cancelAction = UIAlertAction(title:"Cancelar", style: .cancel) { (action: UIAlertAction) in }
 
@@ -279,8 +279,8 @@ extension UsuariosViewController: UICollectionViewDelegate {
             print("cvVisitaFrecuente")
             
             let data = visitaFrecuenteViewModel.listArray[indexPath.row]
-            let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PerfilGenericoViewController") as! PerfilGenericoViewController
-            vc.paramNombre = "\(data.name ?? "") \(data.lastName ?? "")"
+            let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "DetalleVisitasFrecuentesViewController") as! DetalleVisitasFrecuentesViewController
+            vc.paramID = data.id ?? 0
             navigationController?.pushViewController(vc, animated: true)
             
         } else if (collectionView == self.cvProveedor) {
@@ -330,7 +330,7 @@ extension UsuariosViewController: UICollectionViewDataSource {
             let data = visitaFrecuenteViewModel.listArray[indexPath.row]
             
             cell.container.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
-            cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
+//            cell.containerImage.cornerRadiusView(borderRadius: Constants.App.cornerRadiusView)
             
             cell.lblNombre?.text = data.name?.capitalized
             cell.lblTipoVisita?.text = data.lastName?.capitalized

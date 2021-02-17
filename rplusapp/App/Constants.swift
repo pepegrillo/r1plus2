@@ -147,7 +147,7 @@ struct Constants {
         static let cornerCircle = CGFloat(50.0)
         
         // Realm Database Version
-        static let bdVersion = 2
+        static let bdVersion = 3
         static let bdFacebookData = "bdFacebookData"
         
         //message

@@ -29,4 +29,21 @@ struct VisitaFrecuenteWS {
         }
     }
     
+    
+    func getVisitaFrecuenteDetalle(idDetalle: Int, completion: @escaping (VisitaFrecuenteDetalle?,_ error: Error?)->()) {
+        
+        // el servicio de detalle es pase
+        let url = "\(Constants.WS.postRegistroVisita)/\(idDetalle)"
+        
+        print(url)
+        RequestManager.sharedService.requestAPI(url: url, parameter: nil, httpMethodType: .GET) { (response, error) in
+            
+            guard let data = response else {
+                completion(nil,error)
+                return
+            }
+            completion(VisitaFrecuenteDetalle(attributes: data), nil)
+        }
+    }
+    
 }
