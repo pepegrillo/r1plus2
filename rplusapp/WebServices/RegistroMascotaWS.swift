@@ -15,7 +15,7 @@ struct RegistroMascotaWS {
             "description": body[3],
             "id_tipo_mascota": body[1],
             "photo_pet": body[4],
-            "photo_card": body[4]
+            "photo_card": body[5]
         ]
         
         print(body)

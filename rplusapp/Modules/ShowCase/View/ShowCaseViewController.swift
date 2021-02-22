@@ -9,6 +9,7 @@ import UIKit
 
 class ShowCaseViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var imageBgShowcase: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var btnSkip: UIButton!
@@ -17,9 +18,9 @@ class ShowCaseViewController: UIViewController, UIScrollViewDelegate {
     var scrollHeight: CGFloat! = 0.0
     
     //data for the slides
-    var titles = ["FAST DELIVERY","EXCITING OFFERS","SECURE PAYMENT"]
-    var descs = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.","Lorem ipsum dolor sit amet, consectetur adipiscing elit.","Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
-    var imgs = ["LogoBlue","LogoBlue","LogoBlue"]
+    var titles = ["Bienvenido a R Plus","Reporta tus visitas","Multiples secciones"]
+    var descs = ["Una herramienta innovadora que le ayudará a agilizar los procesos de comunicación entre los administradores de su residencia y mantenerse informado sobre actividades y servicios que recibe.","Ahora con facilidad podrás reportar tus visitas frecuentes y eventuales así también empleados y proveedores, a quienes podrás compartir un código QR que facilitará y agilizará el proceso de verificación al ingreso y salidas de una manera segura.","R plus se convierte en una herramienta dinámica, que te facilitará lo siguiente: \n   - Reportar incidencias \n - Solicitar reservación de áreas comunes para tus eventos. \n - Registrar a tu mascota. \n - Ver anuncios y actividades. \n - Contactar vía telefónica en caso de emergencia."]
+    var imgs = ["showcase1","showcase2","showcase3"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,7 +55,7 @@ class ShowCaseViewController: UIViewController, UIScrollViewDelegate {
         
         //crete the slides and add them
         var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
+    
         for index in 0..<titles.count {
             frame.origin.x = scrollWidth * CGFloat(index)
             frame.size = CGSize(width: scrollWidth, height: scrollHeight)
@@ -71,17 +72,20 @@ class ShowCaseViewController: UIViewController, UIScrollViewDelegate {
             txt1.textAlignment = .center
             txt1.font = UIFont.boldSystemFont(ofSize: 20.0)
             txt1.text = titles[index]
+            txt1.textColor = UIColor(cgColor: Constants.PaletteColors.colorFourth.cgColor)
             
-            let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10,width:scrollWidth-64,height:50))
-            txt2.textAlignment = .center
-            txt2.numberOfLines = 3
-            txt2.font = UIFont.systemFont(ofSize: 18.0)
+            let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10, width: scrollWidth-64, height: 210))
+            txt2.textAlignment = .left
+            txt2.numberOfLines = 15
+            txt2.font = UIFont.systemFont(ofSize: 16.0)
             txt2.text = descs[index]
+            txt2.textColor = UIColor(cgColor: Constants.PaletteColors.colorFourth.cgColor)
             
             slide.addSubview(imageView)
             slide.addSubview(txt1)
             slide.addSubview(txt2)
             scrollView.addSubview(slide)
+            
             
         }
         
@@ -108,12 +112,24 @@ class ShowCaseViewController: UIViewController, UIScrollViewDelegate {
     func setIndiactorForCurrentPage()  {
         let page = (scrollView?.contentOffset.x)!/scrollWidth
         pageControl?.currentPage = Int(page)
+        print(page)
+        //background showcase
+//        imageBgShowcase.image = UIImage(named: "BgShowcase\(Int(page)+1)")
+        
+        UIView.transition(with: imageBgShowcase,
+                          duration: 0.75,
+                          options: .transitionCrossDissolve,
+                          animations: { self.imageBgShowcase.image = UIImage(named: "BgShowcase\(Int(page)+1)") },
+                          completion: nil)
+        
     }
     
     // MARK: action btn Omitir
     
     @IBAction func actionSkip(_ sender: UIButton) {
-        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PermisosViewController") as! PermisosViewController
+//        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PermisosViewController") as! PermisosViewController
+//        navigationController?.pushViewController(vc, animated: true)
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         navigationController?.pushViewController(vc, animated: true)
     }
 }

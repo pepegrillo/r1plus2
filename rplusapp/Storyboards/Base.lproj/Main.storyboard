@@ -47,6 +47,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BgShowcase1" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-cX-WeD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="364"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bM2-cX-WeD" secondAttribute="height" multiplier="207:182" id="Uhw-l2-a0H"/>
+                                    <constraint firstAttribute="height" constant="364" id="sjQ-QZ-haf"/>
+                                </constraints>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YrJ-BZ-RUe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="cRc-sw-ffp"/>
@@ -76,7 +83,9 @@
                         <viewLayoutGuide key="safeArea" id="8Pg-0a-nmG"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bM2-cX-WeD" firstAttribute="trailing" secondItem="8Pg-0a-nmG" secondAttribute="trailing" id="0yO-N5-JZa"/>
                             <constraint firstItem="YrJ-BZ-RUe" firstAttribute="top" secondItem="hAA-fv-9U6" secondAttribute="top" id="1Mx-T7-5H4"/>
+                            <constraint firstItem="bM2-cX-WeD" firstAttribute="leading" secondItem="8Pg-0a-nmG" secondAttribute="leading" id="2XC-0S-mCR"/>
                             <constraint firstItem="YrJ-BZ-RUe" firstAttribute="centerX" secondItem="hzH-aU-3QN" secondAttribute="centerX" id="5Oh-6G-t0f"/>
                             <constraint firstItem="8Pg-0a-nmG" firstAttribute="trailing" secondItem="15D-JK-edV" secondAttribute="trailing" constant="145" id="CgY-S2-kzH"/>
                             <constraint firstItem="15D-JK-edV" firstAttribute="top" secondItem="YrJ-BZ-RUe" secondAttribute="bottom" constant="8" symbolic="YES" id="Jh2-1p-Q3L"/>
@@ -84,6 +93,7 @@
                             <constraint firstItem="hzH-aU-3QN" firstAttribute="bottom" secondItem="8Pg-0a-nmG" secondAttribute="bottom" id="ZGV-Kc-jCw"/>
                             <constraint firstAttribute="trailing" secondItem="YrJ-BZ-RUe" secondAttribute="trailing" id="cQT-Bp-8US"/>
                             <constraint firstItem="15D-JK-edV" firstAttribute="trailing" secondItem="hzH-aU-3QN" secondAttribute="trailing" id="ek9-Nj-ctj"/>
+                            <constraint firstItem="bM2-cX-WeD" firstAttribute="top" secondItem="hAA-fv-9U6" secondAttribute="top" id="ptu-Kb-NaM"/>
                             <constraint firstItem="15D-JK-edV" firstAttribute="leading" secondItem="8Pg-0a-nmG" secondAttribute="leading" constant="148" id="wu5-cB-nRQ"/>
                             <constraint firstItem="YrJ-BZ-RUe" firstAttribute="leading" secondItem="hAA-fv-9U6" secondAttribute="leading" id="xL4-58-YKF"/>
                         </constraints>
@@ -91,6 +101,7 @@
                     <navigationItem key="navigationItem" id="6p1-1p-7wy"/>
                     <connections>
                         <outlet property="btnSkip" destination="15D-JK-edV" id="I3F-l5-m0l"/>
+                        <outlet property="imageBgShowcase" destination="bM2-cX-WeD" id="Sw0-x8-0m6"/>
                         <outlet property="pageControl" destination="hzH-aU-3QN" id="8xG-id-rlm"/>
                         <outlet property="scrollView" destination="YrJ-BZ-RUe" id="Z9y-4l-5fL"/>
                     </connections>
@@ -5274,7 +5285,8 @@ invitado</string>
                     <connections>
                         <outlet property="btnRegisterMascota" destination="bbS-mF-sc5" id="kCW-q6-aRZ"/>
                         <outlet property="containerForm1" destination="OOL-u5-yyj" id="gGC-KU-rp7"/>
-                        <outlet property="imgAvatar" destination="POH-Se-bws" id="ZpJ-zM-BNc"/>
+                        <outlet property="imgAvatar1" destination="POH-Se-bws" id="AQL-8H-FKI"/>
+                        <outlet property="imgAvatar2" destination="XyX-Py-49x" id="1fw-sf-cl0"/>
                         <outlet property="txtDescripcion" destination="wIV-PD-drQ" id="ioE-xw-rvf"/>
                         <outlet property="txtNombre" destination="tRu-Cf-bqH" id="M9a-2D-NYJ"/>
                         <outlet property="txtRaza" destination="IMA-ot-eMF" id="DYL-EW-j4B"/>
@@ -10001,6 +10013,7 @@ invitado</string>
         <image name="BgPerfil" width="164.66667175292969" height="166.33332824707031"/>
         <image name="BgPerfilMascota" width="374" height="480"/>
         <image name="BgPerfilVisitante" width="150.33332824707031" height="166.33332824707031"/>
+        <image name="BgShowcase1" width="1011" height="1063.3333740234375"/>
         <image name="BgTextLines" width="839" height="338.66665649414062"/>
         <image name="IconAdd" width="42.666667938232422" height="52.333332061767578"/>
         <image name="IconAddContact" width="115.33333587646484" height="113.66666412353516"/>

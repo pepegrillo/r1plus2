@@ -31,7 +31,7 @@ enum Opcion {
             case .usuariosAdicionales: return "Usuarios adicionales"
             case .mascotas: return "Mascotas"
             case .beneficiosResidencia: return "Beneficios de la residencia"
-            case .restriccionesResidencia: return "Restricciones de la residencia"
+            case .restriccionesResidencia: return "Reglamentos"
             case .cerrarSesion: return "Cerrar sesion"
         }
     }

@@ -15,7 +15,8 @@ class RegistroMascotaViewController: UIViewController {
     @IBOutlet weak var txtTipoMascota: UITextField!
     @IBOutlet weak var txtRaza: UITextField!
     @IBOutlet weak var txtDescripcion: UITextField!
-    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgAvatar1: UIImageView!
+    @IBOutlet weak var imgAvatar2: UIImageView!
     
     @IBOutlet weak var btnRegisterMascota: UIButton!
     
@@ -31,7 +32,9 @@ class RegistroMascotaViewController: UIViewController {
     
     //picker select image
     var imagePicker: ImagePicker!
-    var imageDataAvatar: String = ""
+    var imageDataAvatar1: String = ""
+    var imageDataAvatar2: String = ""
+    var tagSelected = 0
     
     // register mascota
     private var registroMascotaViewModel: RegistroMascotaViewModel {
@@ -51,6 +54,7 @@ class RegistroMascotaViewController: UIViewController {
     
     //call get image
     @IBAction func getImageFromAlbum(_ sender: UIButton) {
+        tagSelected = sender.tag
         self.imagePicker.present(from: sender)
     }
     
@@ -100,7 +104,7 @@ extension RegistroMascotaViewController {
             let  vRaza = try txtRaza.validatedText(validationType: ValidatorType.requiredField(field: "Raza", min: 1))
             
             
-            guard (imageDataAvatar != "") else {
+            guard (imageDataAvatar1 != "" || imageDataAvatar2 != "") else {
                 AlertManager.showAlert(withMessage: "Imagen de mascota es campo obligatorio", title: "Advertencia")
                 return
             }
@@ -115,7 +119,7 @@ extension RegistroMascotaViewController {
             group.enter()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 print("------- 2")
-                self.registroMascotaViewModel.requestRegistroMascota(body: [vNombre,"\(self.idTipoMascotaSelected ?? 0)", vRaza, "\(self.txtDescripcion.text ?? "")","\(self.imageDataAvatar)"])
+                self.registroMascotaViewModel.requestRegistroMascota(body: [vNombre,"\(self.idTipoMascotaSelected ?? 0)", vRaza, "\(self.txtDescripcion.text ?? "")","\(self.imageDataAvatar1)","\(self.imageDataAvatar2)"])
                 group.leave()
             }
             
@@ -198,10 +202,21 @@ extension RegistroMascotaViewController: ImagePickerDelegate {
             return
         }
         
-        self.imgAvatar.image = image
-        self.imgAvatar.makeRounded()
-        let imageQualityAvatar:NSData = (imgAvatar.image?.jpegData(compressionQuality: 0))! as NSData
-        imageDataAvatar = "data:image/jpeg;base64," + imageQualityAvatar.base64EncodedString(options: .lineLength64Characters)
+        if tagSelected == 1 {
+         
+            self.imgAvatar1.image = image
+            self.imgAvatar1.makeRounded()
+            let imageQualityAvatar:NSData = (imgAvatar1.image?.jpegData(compressionQuality: 0))! as NSData
+            imageDataAvatar1 = "data:image/jpeg;base64," + imageQualityAvatar.base64EncodedString(options: .lineLength64Characters)
+        } else {
+            
+            self.imgAvatar2.image = image
+            self.imgAvatar2.makeRounded()
+            let imageQualityAvatar:NSData = (imgAvatar2.image?.jpegData(compressionQuality: 0))! as NSData
+            imageDataAvatar2 = "data:image/jpeg;base64," + imageQualityAvatar.base64EncodedString(options: .lineLength64Characters)
+        }
+        
+        
         
     }
 }
