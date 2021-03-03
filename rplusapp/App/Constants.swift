@@ -29,6 +29,7 @@ struct Constants {
         static let getEmpleadoDetalle = "\(baseURLAPI)\(complementURL)empleado/"
         static let getAlerta = "\(baseURLAPI)\(complementURL)alertas"
         static let getReporte = "\(baseURLAPI)\(complementURL)reportes"
+        static let getReporteDetalle = "\(baseURLAPI)\(complementURL)reporte/"
         static let getDirectorio = "\(baseURLAPI)\(complementURL)directorios"
         static let getMascotas = "\(baseURLAPI)\(complementURL)mascotas_user"
         static let getTipoUsuario = "\(baseURLAPI)\(complementURL)roles"
@@ -147,7 +148,7 @@ struct Constants {
         static let cornerCircle = CGFloat(50.0)
         
         // Realm Database Version
-        static let bdVersion = 4
+        static let bdVersion = 5
         static let bdFacebookData = "bdFacebookData"
         
         //message

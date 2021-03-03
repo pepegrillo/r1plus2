@@ -75,12 +75,22 @@ extension MisReportesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tvMisReportes.dequeueReusableCell(withIdentifier: "MisReportesCell", for: indexPath as IndexPath) as! MisReportesTableViewCell
         
-        cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusYellow, borderRadius: Constants.App.cornerRadiusButton)
         let data = misReportesViewModel.listArrayMisReportes[indexPath.row]
         
+        cell.imageIcon.makeRounded()
         cell.imageIcon.sd_setImage(with: URL(string: data.imgAlerta ?? ""), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
         cell.lblTitle.text = data.alerta ?? ""
         cell.lblBadge.setTitle(data.estado, for: .normal)
+        
+        if (data.estado == "Ingresado") {
+            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusBlue, borderRadius: Constants.App.cornerRadiusButton)
+
+        } else if (data.estado == "En proceso") {
+            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusYellow, borderRadius: Constants.App.cornerRadiusButton)
+            
+        } else {
+            cell.lblBadge.customButton(bcColor: Constants.PaletteColors.statusGreen, borderRadius: Constants.App.cornerRadiusButton)
+        }
         
         
         return cell
@@ -94,8 +104,9 @@ extension MisReportesViewController: UITableViewDelegate {
         
         let data = misReportesViewModel.listArrayMisReportes[indexPath.row]
         
-//        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "PerfilMascotaViewController") as! PerfilMascotaViewController
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = navigationController?.storyboard?.instantiateViewController(withIdentifier: "ReporteDetalleViewController") as! ReporteDetalleViewController
+        vc.paramIdReporte = data.idReporte ?? 0
+        navigationController?.pushViewController(vc, animated: true)
         
         print("\(data.alerta ?? "")")
     }

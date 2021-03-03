@@ -25,6 +25,7 @@ class GlobalParameters {
     var globalDataTipoMascota = [DataTipoMascota]()
     var globalDataEmpleadoDetalle = [DataEmpleadoDetalle]()
     var globalDataVisitaDetalle = [DataVisitaFrecuenteDetalle]()
+    var globalDataReporteDetalle = [DataReporteDetalle]()
     
     //apple signin
     var globalAppleName: String = ""

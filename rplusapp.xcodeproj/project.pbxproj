@@ -205,6 +205,9 @@
 		5261519F25DC7396003C6E54 /* PaseImageQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261519E25DC7396003C6E54 /* PaseImageQRViewController.swift */; };
 		526151A225DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526151A125DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift */; };
 		526151A525DD9091003C6E54 /* VisitaDetalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526151A425DD9091003C6E54 /* VisitaDetalleViewModel.swift */; };
+		5297CC2025F0165500EDD25A /* ReporteDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CC1F25F0165500EDD25A /* ReporteDetalleViewController.swift */; };
+		5297CC2325F01B9900EDD25A /* ReporteDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CC2225F01B9900EDD25A /* ReporteDetalle.swift */; };
+		5297CC2625F023BF00EDD25A /* ReporteDetalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297CC2525F023BF00EDD25A /* ReporteDetalleViewModel.swift */; };
 		990D5BE98FD9864078A12854 /* libPods-rplusapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FA74F84CF873F13F1F4B2 /* libPods-rplusapp.a */; };
 		A704A2E425B3D40F00438EB1 /* DeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704A2E325B3D40F00438EB1 /* DeleteViewModel.swift */; };
 		A704A2E725B3D48900438EB1 /* DeleteWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A704A2E625B3D48900438EB1 /* DeleteWS.swift */; };
@@ -417,6 +420,9 @@
 		5261519E25DC7396003C6E54 /* PaseImageQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaseImageQRViewController.swift; sourceTree = "<group>"; };
 		526151A125DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaFrecuenteDetalle.swift; sourceTree = "<group>"; };
 		526151A425DD9091003C6E54 /* VisitaDetalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaDetalleViewModel.swift; sourceTree = "<group>"; };
+		5297CC1F25F0165500EDD25A /* ReporteDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteDetalleViewController.swift; sourceTree = "<group>"; };
+		5297CC2225F01B9900EDD25A /* ReporteDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteDetalle.swift; sourceTree = "<group>"; };
+		5297CC2525F023BF00EDD25A /* ReporteDetalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteDetalleViewModel.swift; sourceTree = "<group>"; };
 		A704A2E325B3D40F00438EB1 /* DeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewModel.swift; sourceTree = "<group>"; };
 		A704A2E625B3D48900438EB1 /* DeleteWS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteWS.swift; sourceTree = "<group>"; };
 		BF2FA74F84CF873F13F1F4B2 /* libPods-rplusapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rplusapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1058,6 +1064,7 @@
 			children = (
 				00AB8F18256621CD001C97E5 /* ReporteViewModel.swift */,
 				00869E4F25794895000A8DE1 /* RegistroReporteViewModel.swift */,
+				5297CC2525F023BF00EDD25A /* ReporteDetalleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1069,6 +1076,7 @@
 				001F17682568D83C00C28CD5 /* MisReportesViewController.swift */,
 				001F176B2568D94800C28CD5 /* MisReportesTableViewCell.swift */,
 				00A857FC257800C70020F61C /* ReporteRegistroViewController.swift */,
+				5297CC1F25F0165500EDD25A /* ReporteDetalleViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1077,6 +1085,7 @@
 			isa = PBXGroup;
 			children = (
 				00AB8F0C2566180D001C97E5 /* Reporte.swift */,
+				5297CC2225F01B9900EDD25A /* ReporteDetalle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1470,42 +1479,42 @@
 		00FDB6302559DB480012E265 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				00AB8E732564D12B001C97E5 /* ResidencialWS.swift */,
-				00AB8E8D256583AE001C97E5 /* AnuncioWS.swift */,
-				00AB8EAB2565964E001C97E5 /* PerfilWS.swift */,
-				00AB8EB92565AFF7001C97E5 /* VisitaFrecuenteWS.swift */,
-				00AB8ED92565C4D2001C97E5 /* ProveedorWS.swift */,
+				002BC699256EF962006A2BFD /* AgregarCasaWS.swift */,
 				00AB8F1225661E95001C97E5 /* AlertaWS.swift */,
-				00AB8F1525661EA2001C97E5 /* ReporteWS.swift */,
+				0021FDF32580129000E86856 /* AmenidadesWS.swift */,
+				00AB8E8D256583AE001C97E5 /* AnuncioWS.swift */,
+				00A857F02577EF890020F61C /* BeneficioRestriccionWS.swift */,
+				009A576E25BFD5E70077D03D /* ContactosVerificadosWS.swift */,
+				A704A2E625B3D48900438EB1 /* DeleteWS.swift */,
 				00AB8FE625670044001C97E5 /* DirectorioWS.swift */,
-				00AB901825671B78001C97E5 /* MascotasWS.swift */,
+				006011F7257AC41C00AE2956 /* EmpleadoDetalleWS.swift */,
+				00A857D82576F1630020F61C /* EmpleadoWS.swift */,
+				002BC6C22570545C006A2BFD /* EmpresaProveedorWS.swift */,
+				00A857B72575DFC40020F61C /* HistorialPagoWS.swift */,
 				003EBA65256CB2D3009082BC /* LoginRplusWS.swift */,
 				003EBA6C256CD023009082BC /* LogoutWS.swift */,
-				003EBA7B256D59F9009082BC /* TipoUsuarioWS.swift */,
-				003EBAA4256D784F009082BC /* RegistroWS.swift */,
-				003EBAB4256E12A0009082BC /* VerificarCodigoWS.swift */,
-				002BC67A256EB11A006A2BFD /* TipoResindeteWS.swift */,
-				002BC680256EBD4D006A2BFD /* SetTipoResidenteWS.swift */,
-				002BC699256EF962006A2BFD /* AgregarCasaWS.swift */,
-				002BC6B025701BB9006A2BFD /* RegistroEmpleadoWS.swift */,
-				002BC6BF25704099006A2BFD /* TipoAreaComunWS.swift */,
-				002BC6C22570545C006A2BFD /* EmpresaProveedorWS.swift */,
-				002BC6CF25705903006A2BFD /* RegistroProveedorWS.swift */,
-				002BC6D525716AC8006A2BFD /* RegistroVisitaWS.swift */,
-				002BC6DB25719B5F006A2BFD /* TipoDocumentoWS.swift */,
-				00A857B72575DFC40020F61C /* HistorialPagoWS.swift */,
-				00A857C325768CC30020F61C /* PerfilMascotaWS.swift */,
-				00A857C925769B110020F61C /* RegistroMascotaWS.swift */,
-				00A857D525769D2C0020F61C /* TipoMascotaWS.swift */,
-				00A857D82576F1630020F61C /* EmpleadoWS.swift */,
-				00A857F02577EF890020F61C /* BeneficioRestriccionWS.swift */,
-				00869E4C257946FB000A8DE1 /* RegistroReporteWS.swift */,
-				006011F7257AC41C00AE2956 /* EmpleadoDetalleWS.swift */,
+				00AB901825671B78001C97E5 /* MascotasWS.swift */,
 				00601203257ACCBC00AE2956 /* PasesAsignadosWS.swift */,
-				0021FDF32580129000E86856 /* AmenidadesWS.swift */,
 				000082E4258D0FFB00B35D07 /* PasswordRecoveryWS.swift */,
-				A704A2E625B3D48900438EB1 /* DeleteWS.swift */,
-				009A576E25BFD5E70077D03D /* ContactosVerificadosWS.swift */,
+				00A857C325768CC30020F61C /* PerfilMascotaWS.swift */,
+				00AB8EAB2565964E001C97E5 /* PerfilWS.swift */,
+				00AB8ED92565C4D2001C97E5 /* ProveedorWS.swift */,
+				002BC6B025701BB9006A2BFD /* RegistroEmpleadoWS.swift */,
+				00A857C925769B110020F61C /* RegistroMascotaWS.swift */,
+				002BC6CF25705903006A2BFD /* RegistroProveedorWS.swift */,
+				00869E4C257946FB000A8DE1 /* RegistroReporteWS.swift */,
+				002BC6D525716AC8006A2BFD /* RegistroVisitaWS.swift */,
+				003EBAA4256D784F009082BC /* RegistroWS.swift */,
+				00AB8F1525661EA2001C97E5 /* ReporteWS.swift */,
+				00AB8E732564D12B001C97E5 /* ResidencialWS.swift */,
+				002BC680256EBD4D006A2BFD /* SetTipoResidenteWS.swift */,
+				002BC6BF25704099006A2BFD /* TipoAreaComunWS.swift */,
+				002BC6DB25719B5F006A2BFD /* TipoDocumentoWS.swift */,
+				00A857D525769D2C0020F61C /* TipoMascotaWS.swift */,
+				002BC67A256EB11A006A2BFD /* TipoResindeteWS.swift */,
+				003EBA7B256D59F9009082BC /* TipoUsuarioWS.swift */,
+				003EBAB4256E12A0009082BC /* VerificarCodigoWS.swift */,
+				00AB8EB92565AFF7001C97E5 /* VisitaFrecuenteWS.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1743,6 +1752,7 @@
 				00601201257ACC8900AE2956 /* PasesAsignadosViewModel.swift in Sources */,
 				00A857D625769D2C0020F61C /* TipoMascotaWS.swift in Sources */,
 				00AB9008256716E2001C97E5 /* PerfilMascotaViewController.swift in Sources */,
+				5297CC2325F01B9900EDD25A /* ReporteDetalle.swift in Sources */,
 				00FDB6462559DDBC0012E265 /* UIImageView+Extensions.swift in Sources */,
 				00AB8E7E2564E340001C97E5 /* ResidencialCollectionViewCell.swift in Sources */,
 				002BC692256EF446006A2BFD /* Ubicacion.swift in Sources */,
@@ -1765,6 +1775,7 @@
 				00FDB6472559DDBC0012E265 /* Buttons.swift in Sources */,
 				00A857DC2576F1CD0020F61C /* EmpleadoViewModel.swift in Sources */,
 				00AB8EB42565AF36001C97E5 /* VisitaFrecuente.swift in Sources */,
+				5297CC2025F0165500EDD25A /* ReporteDetalleViewController.swift in Sources */,
 				00AB8E812564E576001C97E5 /* UIView+Extensions.swift in Sources */,
 				002BC678256EB021006A2BFD /* TipoResidenteViewModel.swift in Sources */,
 				00AB8E8B2565833D001C97E5 /* AnuncioViewModel.swift in Sources */,
@@ -1833,6 +1844,7 @@
 				00A857C725768D250020F61C /* PerfilMascotaViewModel.swift in Sources */,
 				526151A225DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift in Sources */,
 				00AB8FF325670E9B001C97E5 /* MiPerfilViewController.swift in Sources */,
+				5297CC2625F023BF00EDD25A /* ReporteDetalleViewModel.swift in Sources */,
 				003BF599257ED64F00DC7B2C /* AmenidadViewModel.swift in Sources */,
 				00AB8F29256633E0001C97E5 /* OpcionViewModel.swift in Sources */,
 				00AB8F0D2566180D001C97E5 /* Reporte.swift in Sources */,
@@ -2071,7 +2083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin DEVJO";
@@ -2096,7 +2108,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin ADHOCJO";
