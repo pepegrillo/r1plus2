@@ -36,12 +36,13 @@ struct Reporte: Codable {
 // MARK: - DataReporte
 struct DataReporte: Codable {
     var idReporte: Int?
-    var createdAt, imgAlerta, alerta, estado: String?
+    var createdAt, imgAlerta, imgAlertaMovil, alerta, estado: String?
     
     init(attributes: [String: Any]) {
         self.idReporte = attributes["id_reporte"] as? Int
         self.createdAt = attributes["created_at"] as? String
         self.imgAlerta = attributes["img_alerta"] as? String
+        self.imgAlertaMovil = attributes["img_alerta_movil"] as? String
         self.alerta = attributes["alerta"] as? String
         self.estado = attributes["estado"] as? String
         

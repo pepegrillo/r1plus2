@@ -45,6 +45,10 @@ extension ReporteDetalleViewController {
     
     private func setDesign() {
         
+        navigationController?.navigationBar.barTintColor = Constants.PaletteColors.colorFirst
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         self.imgAvatar.makeRounded()
         
     }

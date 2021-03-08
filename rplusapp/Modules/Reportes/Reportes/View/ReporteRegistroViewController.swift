@@ -91,6 +91,10 @@ extension ReporteRegistroViewController {
     //set design
     private func setScreenDesign() {
         
+        navigationController?.navigationBar.barTintColor = Constants.PaletteColors.colorFirst
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         containerForm1.cornerRadiusViewBorder(bcColor: .white, borderRadius: Constants.App.cornerRadius)
 //        containerForm2.cornerRadiusViewBorder(bcColor: Constants.PaletteColors.aLightGray, borderRadius: Constants.App.cornerRadius)
         self.imgReporteDetail.makeRounded()

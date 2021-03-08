@@ -51,7 +51,7 @@ extension UITextField {
         textColor = titleColor
         backgroundColor = bcColor
         isSecureTextEntry = secure!
-        attributedPlaceholder = NSAttributedString(string: placeholderText!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)])
+        attributedPlaceholder = NSAttributedString(string: placeholderText!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)])
         layer.cornerRadius = CGFloat(2.0)
         layer.masksToBounds = true
         layer.borderColor = borderColor?.cgColor

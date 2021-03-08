@@ -18,6 +18,15 @@ class EmpleadoAllViewController: UIViewController {
         DeleteViewModel(delegate: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = Constants.PaletteColors.colorFourth
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.PaletteColors.colorFourth]
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

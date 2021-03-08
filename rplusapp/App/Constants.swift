@@ -105,7 +105,7 @@ struct Constants {
         static let aPurple = UIColor(hex: "#5e49b0")
         static let aBlueClear = UIColor(red: 8/255, green: 28/255, blue: 36/255, alpha: 0.75)
         static let aLightGray = UIColor(hex: "#F4F4F4")
-        static let aGray = UIColor(hex: "#707070")
+        static let aGray = UIColor(hex: "#A0ABB1")
         static let aBorderGray = UIColor(hex: "#898989")
         static let aWarning = UIColor(hex: "#f9ca24")
         static let aOk = UIColor(hex: "#6ab04c")
@@ -143,12 +143,12 @@ struct Constants {
         static let cornerRadiusText = CGFloat(24.0)
         static let cornerRadiusTiny = CGFloat(15.0)
         static let cornerRadiusButtonLarge = CGFloat(20.0)
-        static let cornerRadiusButton = CGFloat(6.0)
+        static let cornerRadiusButton = CGFloat(8.0)
         static let cornerRadiusView = CGFloat(8.0)
         static let cornerCircle = CGFloat(50.0)
         
         // Realm Database Version
-        static let bdVersion = 5
+        static let bdVersion = 6
         static let bdFacebookData = "bdFacebookData"
         
         //message

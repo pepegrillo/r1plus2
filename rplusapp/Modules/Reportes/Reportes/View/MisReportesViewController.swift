@@ -13,8 +13,20 @@ class MisReportesViewController: UIViewController {
     
     private var misReportesViewModel = ReporteViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = Constants.PaletteColors.colorFourth
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.PaletteColors.colorFourth]
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.PaletteColors.colorFourth]
         
         // init loading
         initialMethod()
@@ -78,7 +90,7 @@ extension MisReportesViewController: UITableViewDataSource {
         let data = misReportesViewModel.listArrayMisReportes[indexPath.row]
         
         cell.imageIcon.makeRounded()
-        cell.imageIcon.sd_setImage(with: URL(string: data.imgAlerta ?? ""), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
+        cell.imageIcon.sd_setImage(with: URL(string: data.imgAlertaMovil ?? ""), placeholderImage: UIImage(named: Constants.App.imagePlaceholder))
         cell.lblTitle.text = data.alerta ?? ""
         cell.lblBadge.setTitle(data.estado, for: .normal)
         

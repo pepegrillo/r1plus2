@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.visibleViewController?.title = "Bienvenido"
         
         // init loading

@@ -43,6 +43,8 @@ class UsuariosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.PaletteColors.colorFourth]
         self.navigationController?.visibleViewController?.title = "Usuarios"
         
         // init loading

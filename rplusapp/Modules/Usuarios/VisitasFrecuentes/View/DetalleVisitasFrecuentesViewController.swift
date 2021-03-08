@@ -23,6 +23,7 @@ class DetalleVisitasFrecuentesViewController: UIViewController {
     
     var paramID: Int = 0
     var image: UIImage?
+    var shareCode: String = ""
     
     private var visitaDetalleViewModel: VisitaDetalleViewModel{
         VisitaDetalleViewModel(delegate: self)
@@ -41,11 +42,19 @@ class DetalleVisitasFrecuentesViewController: UIViewController {
     
     @IBAction func actionShareImageQR(_ sender: UIButton) {
         
-        let imageToShare = [image]
-        let shareImageViewController = UIActivityViewController(activityItems: imageToShare as [Any], applicationActivities: nil)
-        shareImageViewController.popoverPresentationController?.sourceView = self.view
-        
-        self.present(shareImageViewController, animated: true, completion: nil)
+        if let imageX = image!.pngData() {
+            let vc = UIActivityViewController(activityItems: [imageX, shareCode], applicationActivities: [])
+            if #available(iOS 13.0, *) {
+                vc.isModalInPresentation = true
+            }
+            present(vc, animated: true)
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
 }
 
@@ -76,7 +85,9 @@ extension DetalleVisitasFrecuentesViewController: VisitaDetalleDelegate {
             
             let dataVisita = GlobalParameters.instance().globalDataVisitaDetalle
             
+            self.shareCode = "https://rplus.latmobile.com/share/\(dataVisita[0].code ?? "")"
             self.image =  GeneratorQR.createGeneratorQR.generateQRCode(from: "\(dataVisita[0].code ?? "")")
+            self.image = self.imageQR.image
             self.imageQR.image = self.image
             
             self.lblNombre.text = dataVisita[0].name?.capitalized

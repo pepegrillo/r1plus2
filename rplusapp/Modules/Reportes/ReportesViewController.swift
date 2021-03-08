@@ -31,6 +31,8 @@ class ReportesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Constants.PaletteColors.colorFourth]
         self.navigationController?.visibleViewController?.title = "Reportes"
         
         // show buttons in bar navigation

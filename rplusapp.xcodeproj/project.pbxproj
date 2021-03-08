@@ -202,6 +202,12 @@
 		00FDB693255B40540012E265 /* DirectorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB692255B40540012E265 /* DirectorioViewController.swift */; };
 		00FDB696255B40640012E265 /* OpcionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB695255B40640012E265 /* OpcionesViewController.swift */; };
 		00FDB699255B45F60012E265 /* NavigationMenuBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDB698255B45F60012E265 /* NavigationMenuBaseController.swift */; };
+		522EE9F925F2D5AA0092127A /* Calibri-Light-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F325F2D5A90092127A /* Calibri-Light-Italic.ttf */; };
+		522EE9FA25F2D5AA0092127A /* Calibri-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F425F2D5A90092127A /* Calibri-Light.ttf */; };
+		522EE9FB25F2D5AA0092127A /* Calibri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F525F2D5A90092127A /* Calibri-Regular.ttf */; };
+		522EE9FC25F2D5AA0092127A /* Calibri-Bold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F625F2D5A90092127A /* Calibri-Bold-Italic.ttf */; };
+		522EE9FD25F2D5AA0092127A /* Calibri-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F725F2D5AA0092127A /* Calibri-Italic.ttf */; };
+		522EE9FE25F2D5AA0092127A /* Calibri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 522EE9F825F2D5AA0092127A /* Calibri-Bold.ttf */; };
 		5261519F25DC7396003C6E54 /* PaseImageQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261519E25DC7396003C6E54 /* PaseImageQRViewController.swift */; };
 		526151A225DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526151A125DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift */; };
 		526151A525DD9091003C6E54 /* VisitaDetalleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526151A425DD9091003C6E54 /* VisitaDetalleViewModel.swift */; };
@@ -417,6 +423,12 @@
 		00FDB698255B45F60012E265 /* NavigationMenuBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuBaseController.swift; sourceTree = "<group>"; };
 		0613F554D0334495CB4F6393 /* Pods-rplusapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rplusapp.release.xcconfig"; path = "Target Support Files/Pods-rplusapp/Pods-rplusapp.release.xcconfig"; sourceTree = "<group>"; };
 		17D56828F182284AA60BCEC7 /* Pods-rplusapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rplusapp.debug.xcconfig"; path = "Target Support Files/Pods-rplusapp/Pods-rplusapp.debug.xcconfig"; sourceTree = "<group>"; };
+		522EE9F325F2D5A90092127A /* Calibri-Light-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Light-Italic.ttf"; sourceTree = "<group>"; };
+		522EE9F425F2D5A90092127A /* Calibri-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Light.ttf"; sourceTree = "<group>"; };
+		522EE9F525F2D5A90092127A /* Calibri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Regular.ttf"; sourceTree = "<group>"; };
+		522EE9F625F2D5A90092127A /* Calibri-Bold-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Bold-Italic.ttf"; sourceTree = "<group>"; };
+		522EE9F725F2D5AA0092127A /* Calibri-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Italic.ttf"; sourceTree = "<group>"; };
+		522EE9F825F2D5AA0092127A /* Calibri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri-Bold.ttf"; sourceTree = "<group>"; };
 		5261519E25DC7396003C6E54 /* PaseImageQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaseImageQRViewController.swift; sourceTree = "<group>"; };
 		526151A125DD8EF3003C6E54 /* VisitaFrecuenteDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaFrecuenteDetalle.swift; sourceTree = "<group>"; };
 		526151A425DD9091003C6E54 /* VisitaDetalleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitaDetalleViewModel.swift; sourceTree = "<group>"; };
@@ -1365,6 +1377,7 @@
 				00FDB6222559DACA0012E265 /* App */,
 				00FDB6232559DAD40012E265 /* Extensions */,
 				00FDB6202559D9A40012E265 /* Extras */,
+				522EE9E425F2D4E40092127A /* Fonts */,
 				00FDB6192559D8100012E265 /* Info.plist */,
 				00FDB6212559D9B10012E265 /* Managers */,
 				00FDB62D2559DB220012E265 /* Modules */,
@@ -1582,6 +1595,19 @@
 			path = Opciones;
 			sourceTree = "<group>";
 		};
+		522EE9E425F2D4E40092127A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				522EE9F625F2D5A90092127A /* Calibri-Bold-Italic.ttf */,
+				522EE9F825F2D5AA0092127A /* Calibri-Bold.ttf */,
+				522EE9F725F2D5AA0092127A /* Calibri-Italic.ttf */,
+				522EE9F325F2D5A90092127A /* Calibri-Light-Italic.ttf */,
+				522EE9F425F2D5A90092127A /* Calibri-Light.ttf */,
+				522EE9F525F2D5A90092127A /* Calibri-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		67C647DE2BD3A217DF45E769 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1670,8 +1696,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FDB6182559D8100012E265 /* LaunchScreen.storyboard in Resources */,
+				522EE9FC25F2D5AA0092127A /* Calibri-Bold-Italic.ttf in Resources */,
 				00FDB6152559D8100012E265 /* Assets.xcassets in Resources */,
+				522EE9FE25F2D5AA0092127A /* Calibri-Bold.ttf in Resources */,
+				522EE9FB25F2D5AA0092127A /* Calibri-Regular.ttf in Resources */,
+				522EE9F925F2D5AA0092127A /* Calibri-Light-Italic.ttf in Resources */,
 				00FDB6132559D80E0012E265 /* Main.storyboard in Resources */,
+				522EE9FA25F2D5AA0092127A /* Calibri-Light.ttf in Resources */,
+				522EE9FD25F2D5AA0092127A /* Calibri-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2083,7 +2115,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin DEVJO";
@@ -2108,7 +2140,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoves.rplus.rplusapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "RPlus App Signin ADHOCJO";

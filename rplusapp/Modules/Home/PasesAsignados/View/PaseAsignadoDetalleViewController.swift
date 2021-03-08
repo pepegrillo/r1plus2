@@ -41,6 +41,7 @@ extension PaseAsignadoDetalleViewController {
     
     private func setScreenDesign() {
         
+        navigationController?.navigationBar.barTintColor = Constants.PaletteColors.colorSecond
         imageQR.image = GeneratorQR.createGeneratorQR.generateQRCode(from: paramCode ?? "")
     }
     

@@ -70,6 +70,17 @@
 	<string>$(PRODUCT_NAME) requiere permisos para acceder a sus contactos de forma anonima.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>$(PRODUCT_NAME) requiere permisos para acceder a su camara.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) requiere permisos para acceder a su camara.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Calibri-Bold-Italic.ttf</string>
+		<string>Calibri-Bold.ttf</string>
+		<string>Calibri-Italic.ttf</string>
+		<string>Calibri-Light-Italic.ttf</string>
+		<string>Calibri-Light.ttf</string>
+		<string>Calibri-Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
